@@ -17,7 +17,7 @@ public class Gui extends JFrame {
 	public Gui() {
 		this.setSize(700, 500);//set size
 		this.setResizable(false);//can't resize
-		this.getContentPane().setBackground(Color.decode("#009900"));
+		this.getContentPane().setBackground(Color.decode("#001F48"));//FGCU Blue
 		//make it show up in the center of the screen each time
 		Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
 		this.setLocation
@@ -26,7 +26,11 @@ public class Gui extends JFrame {
 		this.setTitle("Traffex Graphing Utility");
 		//make TabbedPane
 		JTabbedPane tabbedPane = new JTabbedPane();
+		tabbedPane.setBackground(Color.decode("#014D33"));//FGCU Green
 		
+		/*@setMnemonicAt 
+		 * by pressing alt and some number allows use to navigate the 
+		tabs*/
 		JComponent panel1 = new JPanel();
 		tabbedPane.addTab("Step 1 Get Text File", panel1);
 		tabbedPane.setMnemonicAt(0, KeyEvent.VK_1);
@@ -39,8 +43,6 @@ public class Gui extends JFrame {
 		tabbedPane.addTab("Step 3 Graphing and Export", panel3);
 		tabbedPane.setMnemonicAt(2, KeyEvent.VK_3);
 
-		//by pressing alt and some number allows use to navigate the 
-		//tabs
 		this.add(tabbedPane);
 		this.show();
 	}//end Gui
