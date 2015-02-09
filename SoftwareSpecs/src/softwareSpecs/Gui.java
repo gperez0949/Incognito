@@ -39,7 +39,6 @@ public class Gui extends JFrame {
 		wrapper.setBackground(Color.decode("#001F48"));
 		wrapper.setBorder(new EmptyBorder(10, 10, 10, 10));
 		
-<<<<<<< HEAD
 		
 		/*@setMnemonicAt 
 		 * by pressing alt and some number allows use to navigate the 
@@ -57,20 +56,21 @@ public class Gui extends JFrame {
 		btnFile.setLayout(new GridLayout(1,3,200,0));
 		panel1.add(btnFile);
 		
+		JTabbedPane tabbedPane = new JTabbedPane();
+		
 		tabbedPane.addTab
 		("<html><font color=\"grey\">Step 1 Get Text File</font></html>", panel1);
-=======
+
 		// make TabbedPane
-		JTabbedPane tabbedPane = new JTabbedPane();
+		//JTabbedPane tabbedPane = new JTabbedPane();
 		tabbedPane.setBackground(Color.decode("#014D33"));// FGCU Green
 
 		/*
 		 * @setMnemonicAt by pressing alt and some number allows use to navigate
 		 * the tabs
 		 */
-		JComponent panel1 = new JPanel();
+		//JComponent panel1 = new JPanel();
 		tabbedPane.addTab("<html><font color=\"grey\">Step 1 Get Text File</font></html>",panel1);
->>>>>>> 289bed555d0fd7204e7c0ac89a44e46a1098ff80
 		tabbedPane.setMnemonicAt(0, KeyEvent.VK_1);
 		//end panel 1
 		
@@ -78,17 +78,12 @@ public class Gui extends JFrame {
 		JComponent panel2 = new JPanel();
 		tabbedPane.addTab("<html><font color=\"grey\">Step 2 Data Extraction</font></html>",panel2);
 		tabbedPane.setMnemonicAt(1, KeyEvent.VK_2);
-<<<<<<< HEAD
-		//end panel 2
-		
-		//start panel 3
-=======
+
 		panel2.setSize(700, 500);
 		panel2.setVisible(true);
 		panel2.setLayout(null);
 		panel2.add(new DataSettings());
 
->>>>>>> 289bed555d0fd7204e7c0ac89a44e46a1098ff80
 		JComponent panel3 = new JPanel();
 		tabbedPane.addTab("<html><font color=\"grey\">Step 3 Graphing and Export</font></html>",panel3);
 		tabbedPane.setMnemonicAt(2, KeyEvent.VK_3);
