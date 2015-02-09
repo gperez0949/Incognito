@@ -41,15 +41,18 @@ public class Gui extends JFrame {
 		 * by pressing alt and some number allows use to navigate the 
 		tabs*/
 		JComponent panel1 = new JPanel();
-		tabbedPane.addTab("<html><font color=\"grey\">Step 1 Get Text File</font></html>", panel1);
+		tabbedPane.addTab
+		("<html><font color=\"grey\">Step 1 Get Text File</font></html>", panel1);
 		tabbedPane.setMnemonicAt(0, KeyEvent.VK_1);
 
 		JComponent panel2 = new JPanel();
-		tabbedPane.addTab("<html><font color=\"grey\">Step 2 Data Extraction</font></html>", panel2);
+		tabbedPane.addTab
+		("<html><font color=\"grey\">Step 2 Data Extraction</font></html>", panel2);
 		tabbedPane.setMnemonicAt(1, KeyEvent.VK_2);
 
 		JComponent panel3 = new JPanel();
-		tabbedPane.addTab("<html><font color=\"grey\">Step 3 Graphing and Export</font></html>", panel3);
+		tabbedPane.addTab
+		("<html><font color=\"grey\">Step 3 Graphing and Export</font></html>", panel3);
 		tabbedPane.setMnemonicAt(2, KeyEvent.VK_3);
 
 		wrapper.add(tabbedPane);
