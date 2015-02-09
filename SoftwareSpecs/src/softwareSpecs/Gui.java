@@ -5,18 +5,23 @@ package softwareSpecs;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.Font;
-import java.awt.TextArea;
+import java.awt.GridLayout;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
+import java.io.File;
 
+import javax.swing.JButton;
 import javax.swing.JComponent;
+import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.border.EmptyBorder;
 
 public class Gui extends JFrame {
+	private File selectedFile; 
 
 	public Gui() {
 		this.setSize(700, 500);//set size
@@ -37,29 +42,56 @@ public class Gui extends JFrame {
 		tabbedPane.setBackground(Color.decode("#014D33"));//FGCU Green
         
 		
+		
 		/*@setMnemonicAt 
 		 * by pressing alt and some number allows use to navigate the 
 		tabs*/
+		//start panel 1
 		JComponent panel1 = new JPanel();
+		JButton btnFile = new JButton("Click to choose file");
+		btnFile.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+			//when Click I want to open a JavaFile chooser
+				selectedFile = getFile();
+			}//end actionPerformed method
+		});
+		btnFile.setLayout(new GridLayout(1,3,200,0));
+		panel1.add(btnFile);
+		
 		tabbedPane.addTab
 		("<html><font color=\"grey\">Step 1 Get Text File</font></html>", panel1);
 		tabbedPane.setMnemonicAt(0, KeyEvent.VK_1);
-
+		//end panel 1
+		
+		//start panel 2
 		JComponent panel2 = new JPanel();
 		tabbedPane.addTab
 		("<html><font color=\"grey\">Step 2 Data Extraction</font></html>", panel2);
 		tabbedPane.setMnemonicAt(1, KeyEvent.VK_2);
-
+		//end panel 2
+		
+		//start panel 3
 		JComponent panel3 = new JPanel();
 		tabbedPane.addTab
 		("<html><font color=\"grey\">Step 3 Graphing and Export</font></html>", panel3);
 		tabbedPane.setMnemonicAt(2, KeyEvent.VK_3);
-
+		//end panel 3
 		wrapper.add(tabbedPane);
 		this.add(wrapper);
 		this.show();
 	}//end Gui
 
+	public File getFile(){
+		JFileChooser fileChooser = new JFileChooser();
+		fileChooser.setFileSelectionMode
+			(JFileChooser.FILES_AND_DIRECTORIES);
+		int result = fileChooser.showOpenDialog(this);
+		//if user clicked Cancel button on dialog, return
+		File fileName = fileChooser.getSelectedFile();//get file
+		return fileName;
+	}//end getFile
+	
 	public static void main(String[] args) {
 		new Gui();
 	}//end main
