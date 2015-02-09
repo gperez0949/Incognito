@@ -2,8 +2,11 @@
 //at 2/2/15
 package softwareSpecs;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.TextArea;
 import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
 
@@ -11,6 +14,7 @@ import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
+import javax.swing.border.EmptyBorder;
 
 public class Gui extends JFrame {
 
@@ -24,26 +28,32 @@ public class Gui extends JFrame {
 			(dim.width/2-this.getSize().width/2,
 			 dim.height/2-this.getSize().height/2);
 		this.setTitle("Traffex Graphing Utility");
+		JPanel wrapper = new JPanel();
+		wrapper.setLayout(new BorderLayout());
+		wrapper.setBackground(Color.decode("#001F48"));
+		wrapper.setBorder(new EmptyBorder(10, 10, 10, 10));
 		//make TabbedPane
 		JTabbedPane tabbedPane = new JTabbedPane();
 		tabbedPane.setBackground(Color.decode("#014D33"));//FGCU Green
+        
 		
 		/*@setMnemonicAt 
 		 * by pressing alt and some number allows use to navigate the 
 		tabs*/
 		JComponent panel1 = new JPanel();
-		tabbedPane.addTab("Step 1 Get Text File", panel1);
+		tabbedPane.addTab("<html><font color=\"grey\">Step 1 Get Text File</font></html>", panel1);
 		tabbedPane.setMnemonicAt(0, KeyEvent.VK_1);
 
 		JComponent panel2 = new JPanel();
-		tabbedPane.addTab("Step 2 Data extraction", panel2);
+		tabbedPane.addTab("<html><font color=\"grey\">Step 2 Data Extraction</font></html>", panel2);
 		tabbedPane.setMnemonicAt(1, KeyEvent.VK_2);
 
 		JComponent panel3 = new JPanel();
-		tabbedPane.addTab("Step 3 Graphing and Export", panel3);
+		tabbedPane.addTab("<html><font color=\"grey\">Step 3 Graphing and Export</font></html>", panel3);
 		tabbedPane.setMnemonicAt(2, KeyEvent.VK_3);
 
-		this.add(tabbedPane);
+		wrapper.add(tabbedPane);
+		this.add(wrapper);
 		this.show();
 	}//end Gui
 
