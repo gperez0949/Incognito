@@ -24,24 +24,22 @@ public class Gui extends JFrame {
 	private File selectedFile; 
 
 	public Gui() {
-		this.setSize(700, 500);//set size
-		this.setResizable(false);//can't resize
-		this.getContentPane().setBackground(Color.decode("#001F48"));//FGCU Blue
-		//make it show up in the center of the screen each time
+		
+		this.setSize(720, 580);// set size
+		this.setResizable(false);// can't resize
+		this.getContentPane().setBackground(Color.decode("#001F48"));// FGCU// Blue
+		
+		// make it show up in the center of the screen each time
 		Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-		this.setLocation
-			(dim.width/2-this.getSize().width/2,
-			 dim.height/2-this.getSize().height/2);
+		this.setLocation(dim.width / 2 - this.getSize().width / 2, dim.height/ 2 - this.getSize().height / 2);
 		this.setTitle("Traffex Graphing Utility");
+		
 		JPanel wrapper = new JPanel();
 		wrapper.setLayout(new BorderLayout());
 		wrapper.setBackground(Color.decode("#001F48"));
 		wrapper.setBorder(new EmptyBorder(10, 10, 10, 10));
-		//make TabbedPane
-		JTabbedPane tabbedPane = new JTabbedPane();
-		tabbedPane.setBackground(Color.decode("#014D33"));//FGCU Green
-        
 		
+<<<<<<< HEAD
 		
 		/*@setMnemonicAt 
 		 * by pressing alt and some number allows use to navigate the 
@@ -61,26 +59,46 @@ public class Gui extends JFrame {
 		
 		tabbedPane.addTab
 		("<html><font color=\"grey\">Step 1 Get Text File</font></html>", panel1);
+=======
+		// make TabbedPane
+		JTabbedPane tabbedPane = new JTabbedPane();
+		tabbedPane.setBackground(Color.decode("#014D33"));// FGCU Green
+
+		/*
+		 * @setMnemonicAt by pressing alt and some number allows use to navigate
+		 * the tabs
+		 */
+		JComponent panel1 = new JPanel();
+		tabbedPane.addTab("<html><font color=\"grey\">Step 1 Get Text File</font></html>",panel1);
+>>>>>>> 289bed555d0fd7204e7c0ac89a44e46a1098ff80
 		tabbedPane.setMnemonicAt(0, KeyEvent.VK_1);
 		//end panel 1
 		
 		//start panel 2
 		JComponent panel2 = new JPanel();
-		tabbedPane.addTab
-		("<html><font color=\"grey\">Step 2 Data Extraction</font></html>", panel2);
+		tabbedPane.addTab("<html><font color=\"grey\">Step 2 Data Extraction</font></html>",panel2);
 		tabbedPane.setMnemonicAt(1, KeyEvent.VK_2);
+<<<<<<< HEAD
 		//end panel 2
 		
 		//start panel 3
+=======
+		panel2.setSize(700, 500);
+		panel2.setVisible(true);
+		panel2.setLayout(null);
+		panel2.add(new DataSettings());
+
+>>>>>>> 289bed555d0fd7204e7c0ac89a44e46a1098ff80
 		JComponent panel3 = new JPanel();
-		tabbedPane.addTab
-		("<html><font color=\"grey\">Step 3 Graphing and Export</font></html>", panel3);
+		tabbedPane.addTab("<html><font color=\"grey\">Step 3 Graphing and Export</font></html>",panel3);
 		tabbedPane.setMnemonicAt(2, KeyEvent.VK_3);
 		//end panel 3
 		wrapper.add(tabbedPane);
 		this.add(wrapper);
 		this.show();
-	}//end Gui
+		
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}// end Gui
 
 	public File getFile(){
 		JFileChooser fileChooser = new JFileChooser();
@@ -93,7 +111,8 @@ public class Gui extends JFrame {
 	}//end getFile
 	
 	public static void main(String[] args) {
+		
 		new Gui();
-	}//end main
-	
-}//end Gui
+	}// end main
+
+}// end Gui
