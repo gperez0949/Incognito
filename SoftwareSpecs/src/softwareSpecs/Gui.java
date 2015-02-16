@@ -86,6 +86,10 @@ public class Gui extends JFrame {
 		JComponent panel3 = new JPanel();
 		tabbedPane.addTab("<html><H3 color=\"grey\">Step 3 Graphing and Export</H3></html>",panel3);
 		tabbedPane.setMnemonicAt(2, KeyEvent.VK_3);
+		
+		panel3.setSize(700,500);
+		panel3.setVisible(true);
+		panel3.add(new Graphs());
 		//end panel 3
 		wrapper.add(tabbedPane);
 		this.add(wrapper);
