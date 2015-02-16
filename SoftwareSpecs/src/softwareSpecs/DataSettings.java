@@ -37,6 +37,7 @@ public class DataSettings extends JPanel{
 		eventDay.setLayout(null);
 		submit.setLayout(null);
 		
+		//set location of panels
 		timeInterval.setBounds(0, 0, 700, 100);
 		northBound.setBounds(0, 100, 140, 300);
 		southBound.setBounds(140, 100, 140, 300);
@@ -45,11 +46,13 @@ public class DataSettings extends JPanel{
 		eventDay.setBounds(100, 100, 140, 300);
 		submit.setBounds(0, 400, 700, 100);
 		
-		JLabel label = new JLabel("Time Interval: ");
+		//initialize components for timeInterval panel
+		JLabel timeIntervalLabel = new JLabel("Time Interval: ");
 		JComboBox startDay = new JComboBox();
 		JComboBox endDay = new JComboBox();
 		JComboBox startTime = new JComboBox();
 		JComboBox endTime = new JComboBox();
+		
 		
 		String day[] = new String[1];
 		String time[] = new String[1];
@@ -57,15 +60,28 @@ public class DataSettings extends JPanel{
 		day[0] = "Start";
 		time[0] = "Time";
 		
-		startDay.addItem(day);
-		endDay.addItem(day);
-		startTime.addItem(time);
-		endTime.addItem(time);
+		//next four lines needs some work. method addItem doesn't add an entire array...
+		//todo see above
+		startDay.addItem(day[0]);
+		endDay.addItem(day[0]);
+		startTime.addItem(time[0]);
+		endTime.addItem(time[0]);
 		
-		startDay.setBounds(10, 10, 130, 36);
+		//set location for components
+		timeIntervalLabel.setBounds(10, 10, 130, 36);
+		startDay.setBounds(145,10,130,36);
+		endDay.setBounds(280,10,130,36);
+		startTime.setBounds(415,10,130,36);
+		endTime.setBounds(550,10,130,36);
 		
+		//add components to timeInterval panel
+		timeInterval.add(timeIntervalLabel);
 		timeInterval.add(startDay);
+		timeInterval.add(endDay);
+		timeInterval.add(startTime);
+		timeInterval.add(endTime);
 		
+		//add panels to frame
 		this.add(timeInterval);
 		this.add(northBound);
 		this.add(southBound);
