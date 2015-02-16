@@ -21,8 +21,8 @@ public class DataSettings extends JPanel{
 		JPanel eventDay = new JPanel();
 		JPanel submit = new JPanel();
 		
-		timeInterval.setBackground(Color.cyan);
-		northBound.setBackground(Color.red);
+		//timeInterval.setBackground(Color.cyan);
+		//northBound.setBackground(Color.red);
 		southBound.setBackground(Color.BLACK);
 		eastBound.setBackground(Color.BLUE);
 		westBound.setBackground(Color.ORANGE);
@@ -52,8 +52,7 @@ public class DataSettings extends JPanel{
 		JComboBox endDay = new JComboBox();
 		JComboBox startTime = new JComboBox();
 		JComboBox endTime = new JComboBox();
-		
-		
+				
 		String day[] = new String[1];
 		String time[] = new String[1];
 		
@@ -67,7 +66,7 @@ public class DataSettings extends JPanel{
 		startTime.addItem(time[0]);
 		endTime.addItem(time[0]);
 		
-		//set location for components
+		//set location for components for timeInterval panel
 		timeIntervalLabel.setBounds(10, 10, 130, 36);
 		startDay.setBounds(145,10,130,36);
 		endDay.setBounds(280,10,130,36);
@@ -80,6 +79,34 @@ public class DataSettings extends JPanel{
 		timeInterval.add(endDay);
 		timeInterval.add(startTime);
 		timeInterval.add(endTime);
+		
+		//initialize components for northbound panel
+		JCheckBox northboundCheckBox = new JCheckBox();
+		JComboBox northboundComboBox = new JComboBox();
+		JScrollPane northboundScrollPane = new JScrollPane();
+		JList northboundJList = new JList();
+		JButton northboundAddButton = new JButton();
+		JButton northboundRemoveButton = new JButton();
+		
+		//set text for northbound components
+		northboundCheckBox.setText("NorthBound");
+		northboundComboBox.addItem("A to B");
+		northboundAddButton.setText("Add Route");
+		northboundRemoveButton.setText("Remove Route");
+		
+		//set bounds for northbound components
+		northboundCheckBox.setBounds(5,5,130,36);
+		northboundComboBox.setBounds(5,46,130,36);
+		northboundJList.setBounds(5,87,130,126);
+		northboundAddButton.setBounds(5,218,130,36);
+		northboundRemoveButton.setBounds(5,259,130,36);
+		
+		//add components to northbound panel
+		northBound.add(northboundCheckBox);
+		northBound.add(northboundComboBox);
+		northBound.add(northboundJList);
+		northBound.add(northboundAddButton);
+		northBound.add(northboundRemoveButton);
 		
 		//add panels to frame
 		this.add(timeInterval);
