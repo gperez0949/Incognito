@@ -1,4 +1,4 @@
-package softwareSpecs;
+package src.softwareSpecs;
 
 
 import javax.swing.JPanel;

@@ -1,6 +1,6 @@
 //last edit by James Palmisano
 //at 2/2/15
-package softwareSpecs;
+package src.softwareSpecs;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
