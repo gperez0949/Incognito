@@ -116,10 +116,11 @@ class NorthBound extends JPanel{
 		//initialize components for northbound panel
 		JCheckBox northboundCheckBox = new JCheckBox();
 		JComboBox northboundComboBox = new JComboBox();
-		JScrollPane northboundScrollPane = new JScrollPane();
 		JList northboundJList = new JList();
+		JScrollPane northboundScrollPane = new JScrollPane(northboundJList);
 		JButton northboundAddButton = new JButton();
 		JButton northboundRemoveButton = new JButton();
+		
 		
 		//set text for northbound components
 		northboundCheckBox.setText("NorthBound");
@@ -130,14 +131,14 @@ class NorthBound extends JPanel{
 		//set bounds for northbound components
 		northboundCheckBox.setBounds(5,5,130,36);
 		northboundComboBox.setBounds(5,46,130,36);
-		northboundJList.setBounds(5,87,130,126);
+		northboundScrollPane.setBounds(5,87,130,126);
 		northboundAddButton.setBounds(5,218,130,36);
 		northboundRemoveButton.setBounds(5,259,130,36);
 		
 		//add components to northbound panel
 		this.add(northboundCheckBox);
 		this.add(northboundComboBox);
-		this.add(northboundJList);
+		this.add(northboundScrollPane);
 		this.add(northboundAddButton);
 		this.add(northboundRemoveButton);
 				
@@ -152,8 +153,8 @@ class SouthBound extends JPanel{
 		//initialize components for panel
 		JCheckBox southboundCheckBox = new JCheckBox();
 		JComboBox southboundComboBox = new JComboBox();
-		JScrollPane southboundScrollPane = new JScrollPane();
 		JList southboundJList = new JList();
+		JScrollPane southboundScrollPane = new JScrollPane();
 		JButton southboundAddButton = new JButton();
 		JButton southboundRemoveButton = new JButton();
 		
