@@ -3,6 +3,7 @@ package src.softwareSpecs;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import javax.swing.JPanel;
@@ -43,5 +44,12 @@ public class Graphs extends JPanel {
 	        ChartPanel chartPanel = new ChartPanel(chart);
 	        
 	        this.add(chartPanel);
+
+        DataReader read = new DataReader();
+
+        ArrayList<double[]> data = read.getData();
+        ArrayList<String> names = read.getNames();
+        ArrayList<Integer> types = read.getTypes();
+
 	}
 }
