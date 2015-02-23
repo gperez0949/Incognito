@@ -74,18 +74,21 @@ class TimeInterval extends JPanel{
 		JComboBox startTime = new JComboBox();
 		JComboBox endTime = new JComboBox();
 				
-		String day[] = new String[1];
-		String time[] = new String[1];
+		String day[] = new String[2];
+		String time[] = new String[2];
 		
-		day[0] = "Start";
-		time[0] = "Time";
+		day[0] = "Start Day";
+		day[1] = "End Day";
+		
+		time[1] = "End Time";
+		time[0] = "Start Time";	
 		
 		//next four lines needs some work. method addItem doesn't add an entire array...
 		//todo see above
 		startDay.addItem(day[0]);
-		endDay.addItem(day[0]);
+		endDay.addItem(day[1]);
 		startTime.addItem(time[0]);
-		endTime.addItem(time[0]);
+		endTime.addItem(time[1]);
 		
 		//set location for components for timeInterval panel
 		timeIntervalLabel.setBounds(10, 10, 130, 36);
