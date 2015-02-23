@@ -11,23 +11,23 @@ public class DataSettings extends JPanel{
 		this.setLayout(null);
 		this.setSize(700, 500);
 		this.setVisible(true);
-		this.setBackground(Color.green);
+		//this.setBackground(Color.green);
 		
 		TimeInterval timeInterval = new TimeInterval();
 		NorthBound northBound = new NorthBound();
 		SouthBound southBound = new SouthBound();
 		EastBound eastBound = new EastBound();
 		WestBound westBound = new WestBound();
-		JPanel eventDay = new JPanel();
-		JPanel submit = new JPanel();
+		EventDay eventDay = new EventDay();
+		Submit submit = new Submit();
 		
 		//timeInterval.setBackground(Color.cyan);
 		//northBound.setBackground(Color.red);
 		//southBound.setBackground(Color.BLACK);
 		//eastBound.setBackground(Color.BLUE);
 		//westBound.setBackground(Color.ORANGE);
-		eventDay.setBackground(Color.GRAY);
-		submit.setBackground(Color.MAGENTA);
+		//eventDay.setBackground(Color.GRAY);
+		//submit.setBackground(Color.MAGENTA);
 		
 		
 		northBound.setLayout(null);
@@ -43,7 +43,7 @@ public class DataSettings extends JPanel{
 		southBound.setBounds(140, 100, 140, 300);
 		eastBound.setBounds(280, 100, 140, 300);
 		westBound.setBounds(420, 100, 140, 300);
-		eventDay.setBounds(100, 100, 140, 300);
+		eventDay.setBounds(560, 100, 140, 300);
 		submit.setBounds(0, 400, 700, 100);
 		
 				
@@ -295,6 +295,9 @@ class Submit extends JPanel{
 		
 		//initialize components
 		JButton submitButton = new JButton("Submit");
+		
+		//set location 
+		submitButton.setBounds(350-130/2,50-36/2,130,36);
 		
 		//add components
 		this.add(submitButton);
