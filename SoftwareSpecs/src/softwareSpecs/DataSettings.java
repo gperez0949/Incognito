@@ -1,6 +1,8 @@
 package src.softwareSpecs;
 
 import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.*;
 
 public class DataSettings extends JPanel{
@@ -110,38 +112,137 @@ class TimeInterval extends JPanel{
 }//end timeInterval 
 
 class NorthBound extends JPanel{
+
+    JCheckBox northboundCheckBox;
+    JComboBox northboundComboBox;
+    JScrollPane northboundScrollPane;
+    JList northboundJList;
+    JButton northboundAddButton;
+    JButton northboundRemoveButton;
+    DefaultListModel northboundListModel;
 	
 	public NorthBound(){
-		
+
+        //Create String Array for ComboBox
+        String[] routes = {"A to B" , "B to G", "G to A"};
+
 		//initialize components for northbound panel
-		JCheckBox northboundCheckBox = new JCheckBox();
-		JComboBox northboundComboBox = new JComboBox();
-		JScrollPane northboundScrollPane = new JScrollPane();
-		JList northboundJList = new JList();
-		JButton northboundAddButton = new JButton();
-		JButton northboundRemoveButton = new JButton();
+		northboundCheckBox = new JCheckBox();
+		northboundComboBox = new JComboBox(routes);
+        northboundListModel = new DefaultListModel();
+	    northboundJList = new JList(northboundListModel);
+        northboundScrollPane = new JScrollPane(northboundJList);
+		northboundAddButton = new JButton();
+		northboundRemoveButton = new JButton();
+
 		
 		//set text for northbound components
 		northboundCheckBox.setText("NorthBound");
-		northboundComboBox.addItem("A to B");
 		northboundAddButton.setText("Add Route");
 		northboundRemoveButton.setText("Remove Route");
 		
 		//set bounds for northbound components
 		northboundCheckBox.setBounds(5,5,130,36);
 		northboundComboBox.setBounds(5,46,130,36);
-		northboundJList.setBounds(5,87,130,126);
+        northboundScrollPane.setBounds(5,87,130,126);
 		northboundAddButton.setBounds(5,218,130,36);
 		northboundRemoveButton.setBounds(5,259,130,36);
-		
+
+        //add the action listeners. they are defined at the bottom of the class
+        northboundCheckBox.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                northboundCheckBoxActionPerformed(e);
+            }
+        });
+
+        northboundComboBox.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                northboundComboBoxActionPerformed(e);
+            }
+        });
+
+        northboundAddButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                northboundAddButtonActionPerformed(e);
+            }
+        });
+
+        northboundRemoveButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                northboundRemoveButtonActionPerformed(e);
+            }
+        });
+
 		//add components to northbound panel
 		this.add(northboundCheckBox);
 		this.add(northboundComboBox);
-		this.add(northboundJList);
+		this.add(northboundScrollPane);
 		this.add(northboundAddButton);
 		this.add(northboundRemoveButton);
 				
 	}//end Constructor
+
+    /**
+     * Handles all events for the checkbox
+     *
+     * @param e
+     */
+    public void northboundCheckBoxActionPerformed(ActionEvent e){
+
+
+
+    }
+
+    /**
+     * Handles all events for the comboBox
+     *
+     * @param e
+     */
+
+    public void northboundComboBoxActionPerformed(ActionEvent e){
+
+
+    }
+
+
+    /**
+     * Handles events for the add button
+     *
+     * will take the selected element in the JComboBox and add it to the JList
+     *
+     * Elements in Jlist are considered for processing and eventually their data is viewed
+     * from the user
+     *
+     *
+     * @param e
+     */
+    public void northboundAddButtonActionPerformed(ActionEvent e){
+
+        northboundListModel.addElement(northboundComboBox.getItemAt(northboundComboBox.getSelectedIndex()));
+
+    }
+
+    /**
+     * Handles events for the remove button
+     *
+     * Takes the selected element in the Jlist and removes it from the Jlist.
+     *
+     * Elements in Jlist are considered for processing and eventually their data is viewed
+     * from the user
+     *
+     * @param e
+     */
+
+    public void northboundRemoveButtonActionPerformed(ActionEvent e){
+
+        northboundListModel.remove(northboundJList.getSelectedIndex());
+
+    }
+
 	
 }//end NorthBound
 
