@@ -1,7 +1,6 @@
 package softwareSpecs;
 
 import java.awt.Color;
-
 import javax.swing.*;
 
 public class DataSettings extends JPanel{
