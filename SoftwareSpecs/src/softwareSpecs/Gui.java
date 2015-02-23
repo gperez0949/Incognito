@@ -1,6 +1,6 @@
 //last edit by James Palmisano
 //at 2/2/15
-package softwareSpecs;
+package src.softwareSpecs;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -11,6 +11,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.io.File;
+import java.io.FileNotFoundException;
 
 import javax.swing.JButton;
 import javax.swing.JComponent;
@@ -23,7 +24,7 @@ import javax.swing.border.EmptyBorder;
 public class Gui extends JFrame {
 	private File selectedFile; 
 
-	public Gui() {
+	public Gui() throws FileNotFoundException {
 		
 		this.setSize(720, 580);// set size
 		this.setResizable(false);// can't resize
@@ -69,13 +70,13 @@ public class Gui extends JFrame {
 		 * @setMnemonicAt by pressing alt and some number allows use to navigate
 		 * the tabs
 		 */
-		tabbedPane.addTab("<html><H3 color=\"grey\">Step 1 Get Text File</H3></html>",panel1);
+		tabbedPane.addTab("<html><H3 color=\"White\">Step 1 Get Text File</H3></html>",panel1);
 		tabbedPane.setMnemonicAt(0, KeyEvent.VK_1);
 		//end panel 1
 		
 		//start panel 2
 		JComponent panel2 = new JPanel();
-		tabbedPane.addTab("<html><H3 color=\"grey\">Step 2 Data Extraction</H3></html>",panel2);
+		tabbedPane.addTab("<html><H3 color=\"White\">Step 2 Data Extraction</H3></html>",panel2);
 		tabbedPane.setMnemonicAt(1, KeyEvent.VK_2);
 
 		panel2.setSize(700, 500);
@@ -84,7 +85,7 @@ public class Gui extends JFrame {
 		panel2.add(new DataSettings());
 
 		JComponent panel3 = new JPanel();
-		tabbedPane.addTab("<html><H3 color=\"grey\">Step 3 Graphing and Export</H3></html>",panel3);
+		tabbedPane.addTab("<html><H3 color=\"White\">Step 3 Graphing and Export</H3></html>",panel3);
 		tabbedPane.setMnemonicAt(2, KeyEvent.VK_3);
 		
 		panel3.setSize(700,500);
@@ -108,7 +109,7 @@ public class Gui extends JFrame {
 		return fileName;
 	}//end getFile
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws FileNotFoundException {
 		
 		new Gui();
 	}// end main

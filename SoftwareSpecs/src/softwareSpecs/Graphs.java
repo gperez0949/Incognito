@@ -1,5 +1,9 @@
-package softwareSpecs;
+package src.softwareSpecs;
 
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 
 import javax.swing.JPanel;
 
@@ -16,7 +20,9 @@ import org.jfree.util.Rotation;
 
 public class Graphs extends JPanel {
 	
-	public Graphs(){
+	public Graphs() throws FileNotFoundException{
+		
+		
 
 		DefaultPieDataset result = new DefaultPieDataset();
         result.setValue("Linux", 29);
