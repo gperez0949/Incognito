@@ -113,9 +113,12 @@ class NorthBound extends JPanel{
 	
 	public NorthBound(){
 		
+		//list for combobox
+		String[] routes = {"A to B" , "B to C" , "G to A"};
+		
 		//initialize components for northbound panel
 		JCheckBox northboundCheckBox = new JCheckBox();
-		JComboBox northboundComboBox = new JComboBox();
+		JComboBox northboundComboBox = new JComboBox(routes);
 		JList northboundJList = new JList();
 		JScrollPane northboundScrollPane = new JScrollPane(northboundJList);
 		JButton northboundAddButton = new JButton();
@@ -124,7 +127,6 @@ class NorthBound extends JPanel{
 		
 		//set text for northbound components
 		northboundCheckBox.setText("NorthBound");
-		northboundComboBox.addItem("A to B");
 		northboundAddButton.setText("Add Route");
 		northboundRemoveButton.setText("Remove Route");
 		
@@ -149,32 +151,34 @@ class NorthBound extends JPanel{
 class SouthBound extends JPanel{
 	
 	 public SouthBound(){
+		 
+		//list for combobox
+		String[] routes = {"A to B" , "B to C" , "G to A"};
 	
 		//initialize components for panel
 		JCheckBox southboundCheckBox = new JCheckBox();
-		JComboBox southboundComboBox = new JComboBox();
+		JComboBox southboundComboBox = new JComboBox(routes);
 		JList southboundJList = new JList();
-		JScrollPane southboundScrollPane = new JScrollPane();
+		JScrollPane southboundScrollPane = new JScrollPane(southboundJList);
 		JButton southboundAddButton = new JButton();
 		JButton southboundRemoveButton = new JButton();
 		
 		//set text for components
 		southboundCheckBox.setText("SouthBound");
-		southboundComboBox.addItem("A to B");
 		southboundAddButton.setText("Add Route");
 		southboundRemoveButton.setText("Remove Route");
 		
 		//set bounds for components
 		southboundCheckBox.setBounds(5,5,130,36);
 		southboundComboBox.setBounds(5,46,130,36);
-		southboundJList.setBounds(5,87,130,126);
+		southboundScrollPane.setBounds(5,87,130,126);
 		southboundAddButton.setBounds(5,218,130,36);
 		southboundRemoveButton.setBounds(5,259,130,36);
 		
 		//add components to panel
 		this.add(southboundCheckBox);
 		this.add(southboundComboBox);
-		this.add(southboundJList);
+		this.add(southboundScrollPane);
 		this.add(southboundAddButton);
 		this.add(southboundRemoveButton);
 		 
@@ -187,31 +191,33 @@ class EastBound extends JPanel{
 	
 	public EastBound(){
 		
+		//list for combobox
+		String[] routes = {"A to B" , "B to C" , "G to A"};
+		
 		//initialize components for panel
 		JCheckBox eastboundCheckBox = new JCheckBox();
-		JComboBox eastboundComboBox = new JComboBox();
-		JScrollPane eastboundScrollPane = new JScrollPane();
+		JComboBox eastboundComboBox = new JComboBox(routes);
 		JList eastboundJList = new JList();
+		JScrollPane eastboundScrollPane = new JScrollPane(eastboundJList);
 		JButton eastboundAddButton = new JButton();
 		JButton eastboundRemoveButton = new JButton();
 		
 		//set text for components
 		eastboundCheckBox.setText("EastBound");
-		eastboundComboBox.addItem("A to B");
 		eastboundAddButton.setText("Add Route");
 		eastboundRemoveButton.setText("Remove Route");
 		
 		//set bounds for components
 		eastboundCheckBox.setBounds(5,5,130,36);
 		eastboundComboBox.setBounds(5,46,130,36);
-		eastboundJList.setBounds(5,87,130,126);
+		eastboundScrollPane.setBounds(5,87,130,126);
 		eastboundAddButton.setBounds(5,218,130,36);
 		eastboundRemoveButton.setBounds(5,259,130,36);
 		
 		//add components to panel
 		this.add(eastboundCheckBox);
 		this.add(eastboundComboBox);
-		this.add(eastboundJList);
+		this.add(eastboundScrollPane);
 		this.add(eastboundAddButton);
 		this.add(eastboundRemoveButton);
 				
@@ -223,31 +229,33 @@ class WestBound extends JPanel{
 	
 	public WestBound(){
 		
+		//list for combobox
+		String[] routes = {"A to B" , "B to C" , "G to A"};
+		
 		//initialize components for panel
 		JCheckBox westboundCheckBox = new JCheckBox();
-		JComboBox westboundComboBox = new JComboBox();
-		JScrollPane westboundScrollPane = new JScrollPane();
+		JComboBox westboundComboBox = new JComboBox(routes);
 		JList westboundJList = new JList();
+		JScrollPane westboundScrollPane = new JScrollPane(westboundJList);
 		JButton westboundAddButton = new JButton();
 		JButton westboundRemoveButton = new JButton();
 		
 		//set text for components
 		westboundCheckBox.setText("WestBound");
-		westboundComboBox.addItem("A to B");
 		westboundAddButton.setText("Add Route");
 		westboundRemoveButton.setText("Remove Route");
 		
 		//set bounds for components
 		westboundCheckBox.setBounds(5,5,130,36);
 		westboundComboBox.setBounds(5,46,130,36);
-		westboundJList.setBounds(5,87,130,126);
+		westboundScrollPane.setBounds(5,87,130,126);
 		westboundAddButton.setBounds(5,218,130,36);
 		westboundRemoveButton.setBounds(5,259,130,36);
 		
 		//add components to panel
 		this.add(westboundCheckBox);
 		this.add(westboundComboBox);
-		this.add(westboundJList);
+		this.add(westboundScrollPane);
 		this.add(westboundAddButton);
 		this.add(westboundRemoveButton);
 
@@ -262,28 +270,29 @@ class EventDay extends JPanel{
 		//initialize components for panel
 		
 		JComboBox eventDayComboBox = new JComboBox();
-		JScrollPane eventDayScrollPane = new JScrollPane();
+		JLabel eventLabel = new JLabel();
 		JList eventDayJList = new JList();
+		JScrollPane eventDayScrollPane = new JScrollPane(eventDayJList);
 		JButton eventDayAddButton = new JButton();
 		JButton eventDayRemoveButton = new JButton();
 		
 		//set text for components
-		
-		eventDayComboBox.addItem("A to B");
-		eventDayAddButton.setText("Add Route");
-		eventDayRemoveButton.setText("Remove Route");
+		eventLabel.setText("Events");
+		eventDayComboBox.addItem("Event 1");
+		eventDayAddButton.setText("Add Event");
+		eventDayRemoveButton.setText("Remove Event");
 		
 		//set bounds for components
-		
+		eventLabel.setBounds(50,5,130,36);
 		eventDayComboBox.setBounds(5,46,130,36);
-		eventDayJList.setBounds(5,87,130,126);
+		eventDayScrollPane.setBounds(5,87,130,126);
 		eventDayAddButton.setBounds(5,218,130,36);
 		eventDayRemoveButton.setBounds(5,259,130,36);
 		
 		//add components to panel
-		
+		this.add(eventLabel);
 		this.add(eventDayComboBox);
-		this.add(eventDayJList);
+		this.add(eventDayScrollPane);
 		this.add(eventDayAddButton);
 		this.add(eventDayRemoveButton);
 	
