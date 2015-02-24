@@ -22,81 +22,89 @@ import javax.swing.JTabbedPane;
 import javax.swing.border.EmptyBorder;
 
 public class Gui extends JFrame {
-	private File selectedFile; 
+	private File selectedFile;
 
 	public Gui() throws FileNotFoundException {
-		
+
 		this.setSize(720, 580);// set size
 		this.setResizable(false);// can't resize
-		this.getContentPane().setBackground(Color.decode("#001F48"));// FGCU// Blue
-		
+		this.getContentPane().setBackground(Color.decode("#001F48"));// FGCU//
+																		// Blue
+
 		// make it show up in the center of the screen each time
 		Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-		this.setLocation(dim.width / 2 - this.getSize().width / 2, dim.height/ 2 - this.getSize().height / 2);
+		this.setLocation(dim.width / 2 - this.getSize().width / 2, dim.height
+				/ 2 - this.getSize().height / 2);
 		this.setTitle("Traffex Graphing Utility");
-		
+
 		JPanel wrapper = new JPanel();
 		wrapper.setLayout(new BorderLayout());
 		wrapper.setBackground(Color.decode("#001F48"));
 		wrapper.setBorder(new EmptyBorder(10, 10, 10, 10));
-		
-		
-		/*@setMnemonicAt 
-		 * by pressing alt and some number allows use to navigate the 
-		tabs*/
-		//start panel 1
-		JComponent panel1 = new JPanel();
-		JButton btnFile = new JButton("Click to choose file");
-		btnFile.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-			//when Click I want to open a JavaFile chooser
-				selectedFile = getFile();
-			}//end actionPerformed method
-		});
-		btnFile.setLayout(new GridLayout(1,3,200,0));
-		panel1.add(btnFile);
-		
-		JTabbedPane tabbedPane = new JTabbedPane();
-		
-		
 
-		// make TabbedPane
-		//JTabbedPane tabbedPane = new JTabbedPane();
+		/*
+		 * @setMnemonicAt by pressing alt and some number allows use to navigate
+		 * the tabs
+		 */
+		// start panel 1
+
+		JTabbedPane tabbedPane = new JTabbedPane();
 		tabbedPane.setBackground(Color.decode("#014D33"));// FGCU Green
 
 		/*
 		 * @setMnemonicAt by pressing alt and some number allows use to navigate
 		 * the tabs
 		 */
-		tabbedPane.addTab("<html><H3 color=\"#00b2b2\">Step 1 Get Text File</H3></html>",panel1);
+		JComponent panel1 = new JPanel();
+		tabbedPane.addTab(
+				"<html><H3 color=\"#00b2b2\">Step 1 Get Text File</H3></html>",
+				panel1);
 		tabbedPane.setMnemonicAt(0, KeyEvent.VK_1);
-		//end panel 1
-		
-		//start panel 2
+		panel1.setSize(700, 500);
+		panel1.setVisible(true);
+		panel1.setLayout(null);
+		panel1.add(new GetProjectOrCreateNew());
+		// end panel 1
+
+		// start panel 2
 		JComponent panel2 = new JPanel();
-		tabbedPane.addTab("<html><H3 color=\"#00b2b2\">Step 2 Data Extraction</H3></html>",panel2);
+		tabbedPane
+				.addTab("<html><H3 color=\"#00b2b2\">Step 2 Data Extraction</H3></html>",
+						panel2);
 		tabbedPane.setMnemonicAt(1, KeyEvent.VK_2);
 
 		panel2.setSize(700, 500);
 		panel2.setVisible(true);
 		panel2.setLayout(null);
 		panel2.add(new DataSettings());
+		// end panel 2
 
+		// start panel 3
 		JComponent panel3 = new JPanel();
+<<<<<<< HEAD
 		tabbedPane.addTab("<html><H3 color=\"#00b2b2\">Step 3 Graphing</H3></html>",panel3);
 		tabbedPane.setMnemonicAt(2, KeyEvent.VK_3);
 
 
 		
 		panel3.setSize(700,500);
+=======
+		tabbedPane
+				.addTab("<html><H3 color=\"#00b2b2\">Step 3 Graphing and Export</H3></html>",
+						panel3);
+		tabbedPane.setMnemonicAt(2, KeyEvent.VK_3);
+
+		panel3.setSize(700, 500);
+>>>>>>> 4f62f8a809c871a42b0984a6b5fa9207222b4b6e
 		panel3.setVisible(true);
 		panel3.add(new Graphs());
-		//end panel 3
+		// end panel 3
+
 		wrapper.add(tabbedPane);
 		this.add(wrapper);
 		this.show();
 
+<<<<<<< HEAD
         JComponent panel4 = new JPanel();
         tabbedPane.addTab("<html><H3 color=\"#00b2b2\">Step 4 Export</H3></html>", panel4);
         tabbedPane.setMnemonicAt(3, KeyEvent.VK_4);
@@ -106,21 +114,12 @@ public class Gui extends JFrame {
         Export export = new Export();
         panel4.add(export);
 		
+=======
+>>>>>>> 4f62f8a809c871a42b0984a6b5fa9207222b4b6e
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}// end Gui
 
-	public File getFile(){
-		JFileChooser fileChooser = new JFileChooser();
-		fileChooser.setFileSelectionMode
-			(JFileChooser.FILES_AND_DIRECTORIES);
-		int result = fileChooser.showOpenDialog(this);
-		//if user clicked Cancel button on dialog, return
-		File fileName = fileChooser.getSelectedFile();//get file
-		return fileName;
-	}//end getFile
-	
 	public static void main(String[] args) throws FileNotFoundException {
-		
 		new Gui();
 	}// end main
 
