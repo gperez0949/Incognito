@@ -251,7 +251,8 @@ class EventDay extends JPanel{
 	public EventDay(){
 		
 		//initialize components for panel
-		
+
+        JLabel eventLabel = new JLabel("Events");
 		JComboBox eventDayComboBox = new JComboBox();
 		JScrollPane eventDayScrollPane = new JScrollPane();
 		JList eventDayJList = new JList();
@@ -259,20 +260,21 @@ class EventDay extends JPanel{
 		JButton eventDayRemoveButton = new JButton();
 		
 		//set text for components
-		
-		eventDayComboBox.addItem("A to B");
+
 		eventDayAddButton.setText("Add Route");
 		eventDayRemoveButton.setText("Remove Route");
 		
 		//set bounds for components
-		
+
+        eventLabel.setBounds(50,5,130,36);
 		eventDayComboBox.setBounds(5,46,130,36);
 		eventDayJList.setBounds(5,87,130,126);
 		eventDayAddButton.setBounds(5,218,130,36);
 		eventDayRemoveButton.setBounds(5,259,130,36);
 		
 		//add components to panel
-		
+
+        this.add(eventLabel);
 		this.add(eventDayComboBox);
 		this.add(eventDayJList);
 		this.add(eventDayAddButton);
