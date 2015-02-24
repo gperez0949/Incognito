@@ -1,10 +1,18 @@
 package src.softwareSpecs;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5cd941e396417868b5abce5a50065d2ec9293fb7
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 import javax.swing.JPanel;
 
+<<<<<<< HEAD
+=======
+;
+>>>>>>> 5cd941e396417868b5abce5a50065d2ec9293fb7
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
@@ -28,8 +36,18 @@ public class Graphs extends JPanel {
 		dataset.addValue(4297, "JFreeSVG", "Test");
 		dataset.addValue(21022, "Batik", "Test");
 
+<<<<<<< HEAD
 		JFreeChart chart = ChartFactory.createBarChart("Test", "Time",
 				"Amount of Cars", dataset);
+=======
+        DefaultCategoryDataset dataset = new DefaultCategoryDataset();
+        dataset.addValue(7445, "JFreeSVG", "Warm-up");
+        dataset.addValue(24448, "Batik", "Warm-up");
+        dataset.addValue(4297, "JFreeSVG", "Test");
+        dataset.addValue(21022, "Batik", "Test");
+		
+			JFreeChart chart = ChartFactory.createBarChart("Test", "Time", "Percent Difference", dataset);
+>>>>>>> 5cd941e396417868b5abce5a50065d2ec9293fb7
 
 		CategoryPlot plot = (CategoryPlot) chart.getPlot();
 		// NumberAxis rangeAxis = (NumberAxis)plot.getRangeAxis();

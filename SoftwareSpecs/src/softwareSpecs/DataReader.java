@@ -15,7 +15,11 @@ public class DataReader {
 
 	public DataReader() throws FileNotFoundException{
 		
+<<<<<<< HEAD
 		Scanner scan = new Scanner(new File("D:/workspace/softSpecs/SoftwareSpecs/processed.dat"));
+=======
+		Scanner scan = new Scanner(new File("/Users/austinnafziger/SoftwareProject/SoftwareSpecs/processed.dat"));
+>>>>>>> 5cd941e396417868b5abce5a50065d2ec9293fb7
 		numOfPairs = Integer.parseInt(scan.nextLine());
 		numOfElements = Integer.parseInt(scan.nextLine());
 		
