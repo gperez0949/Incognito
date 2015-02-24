@@ -84,8 +84,10 @@ public class Gui extends JFrame {
 		panel2.add(new DataSettings());
 
 		JComponent panel3 = new JPanel();
-		tabbedPane.addTab("<html><H3 color=\"#00b2b2\">Step 3 Graphing and Export</H3></html>",panel3);
+		tabbedPane.addTab("<html><H3 color=\"#00b2b2\">Step 3 Graphing</H3></html>",panel3);
 		tabbedPane.setMnemonicAt(2, KeyEvent.VK_3);
+
+
 		
 		panel3.setSize(700,500);
 		panel3.setVisible(true);
@@ -94,6 +96,15 @@ public class Gui extends JFrame {
 		wrapper.add(tabbedPane);
 		this.add(wrapper);
 		this.show();
+
+        JComponent panel4 = new JPanel();
+        tabbedPane.addTab("<html><H3 color=\"#00b2b2\">Step 4 Export</H3></html>", panel4);
+        tabbedPane.setMnemonicAt(3, KeyEvent.VK_4);
+        panel4.setSize(700,500);
+        panel4.setVisible(true);
+        panel4.setLayout(null);
+        Export export = new Export();
+        panel4.add(export);
 		
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}// end Gui
