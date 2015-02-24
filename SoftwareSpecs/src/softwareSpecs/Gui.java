@@ -57,7 +57,7 @@ public class Gui extends JFrame {
 		 */
 		JComponent panel1 = new JPanel();
 		tabbedPane.addTab(
-				"<html><H3 color=\"#00b2b2\">Step 1 Get Text File</H3></html>",
+				"<html><H3 color=\"#00b2b2\">Open File</H3></html>",
 				panel1);
 		tabbedPane.setMnemonicAt(0, KeyEvent.VK_1);
 		panel1.setSize(700, 500);
@@ -69,7 +69,7 @@ public class Gui extends JFrame {
 		// start panel 2
 		JComponent panel2 = new JPanel();
 		tabbedPane
-				.addTab("<html><H3 color=\"#00b2b2\">Step 2 Data Extraction</H3></html>",
+				.addTab("<html><H3 color=\"#00b2b2\">Data Settings</H3></html>",
 						panel2);
 		tabbedPane.setMnemonicAt(1, KeyEvent.VK_2);
 
@@ -81,21 +81,13 @@ public class Gui extends JFrame {
 
 		// start panel 3
 		JComponent panel3 = new JPanel();
-<<<<<<< HEAD
-		tabbedPane.addTab("<html><H3 color=\"#00b2b2\">Step 3 Graphing</H3></html>",panel3);
+		tabbedPane.addTab("<html><H3 color=\"#00b2b2\">Graphs</H3></html>",panel3);
 		tabbedPane.setMnemonicAt(2, KeyEvent.VK_3);
 
 
 		
 		panel3.setSize(700,500);
-=======
-		tabbedPane
-				.addTab("<html><H3 color=\"#00b2b2\">Step 3 Graphing and Export</H3></html>",
-						panel3);
-		tabbedPane.setMnemonicAt(2, KeyEvent.VK_3);
 
-		panel3.setSize(700, 500);
->>>>>>> 4f62f8a809c871a42b0984a6b5fa9207222b4b6e
 		panel3.setVisible(true);
 		panel3.add(new Graphs());
 		// end panel 3
@@ -104,18 +96,16 @@ public class Gui extends JFrame {
 		this.add(wrapper);
 		this.show();
 
-<<<<<<< HEAD
+
         JComponent panel4 = new JPanel();
-        tabbedPane.addTab("<html><H3 color=\"#00b2b2\">Step 4 Export</H3></html>", panel4);
+        tabbedPane.addTab("<html><H3 color=\"#00b2b2\">Export</H3></html>", panel4);
         tabbedPane.setMnemonicAt(3, KeyEvent.VK_4);
         panel4.setSize(700,500);
         panel4.setVisible(true);
         panel4.setLayout(null);
         Export export = new Export();
         panel4.add(export);
-		
-=======
->>>>>>> 4f62f8a809c871a42b0984a6b5fa9207222b4b6e
+
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}// end Gui
 
