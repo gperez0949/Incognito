@@ -5,17 +5,12 @@ package src.softwareSpecs;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.GridLayout;
 import java.awt.Toolkit;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.FileNotFoundException;
 
-import javax.swing.JButton;
 import javax.swing.JComponent;
-import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
@@ -81,13 +76,29 @@ public class Gui extends JFrame {
 
 		// start panel 3
 		JComponent panel3 = new JPanel();
+<<<<<<< HEAD
 		tabbedPane.addTab("<html><H3 color=\"#00b2b2\">Graphs</H3></html>",panel3);
+=======
+
+		tabbedPane.addTab("<html><H3 color=\"#00b2b2\">Step 3 Graphing</H3></html>",panel3);
+>>>>>>> a6855f037ad2b4d65dc7db7d2040a0bd9eed2ebb
 		tabbedPane.setMnemonicAt(2, KeyEvent.VK_3);
 
 
 		
 		panel3.setSize(700,500);
+<<<<<<< HEAD
 
+=======
+
+		tabbedPane
+				.addTab("<html><H3 color=\"#00b2b2\">Step 3 Graphing and Export</H3></html>",
+						panel3);
+		tabbedPane.setMnemonicAt(2, KeyEvent.VK_3);
+
+		panel3.setSize(700, 500);
+
+>>>>>>> a6855f037ad2b4d65dc7db7d2040a0bd9eed2ebb
 		panel3.setVisible(true);
 		panel3.add(new Graphs());
 		// end panel 3
