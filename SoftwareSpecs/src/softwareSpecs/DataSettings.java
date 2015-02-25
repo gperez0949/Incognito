@@ -253,35 +253,53 @@ class EventDay extends JPanel{
 		//initialize components for panel
 
         JLabel eventLabel = new JLabel("Events");
-		JComboBox eventDayComboBox = new JComboBox();
-		JScrollPane eventDayScrollPane = new JScrollPane();
+		JButton newEventButton = new JButton();
 		JList eventDayJList = new JList();
-		JButton eventDayAddButton = new JButton();
-		JButton eventDayRemoveButton = new JButton();
+        JScrollPane eventDayScrollPane = new JScrollPane(eventDayJList);
+		JButton editButton = new JButton();
+		JButton removeButton = new JButton();
 		
 		//set text for components
-
-		eventDayAddButton.setText("Add Route");
-		eventDayRemoveButton.setText("Remove Route");
+        newEventButton.setText("New Event");
+		editButton.setText("EditEvent");
+		removeButton.setText("Remove Event");
 		
 		//set bounds for components
 
         eventLabel.setBounds(50,5,130,36);
-		eventDayComboBox.setBounds(5,46,130,36);
-		eventDayJList.setBounds(5,87,130,126);
-		eventDayAddButton.setBounds(5,218,130,36);
-		eventDayRemoveButton.setBounds(5,259,130,36);
+        newEventButton.setBounds(5,46,130,36);
+        eventDayScrollPane.setBounds(5,87,130,126);
+		editButton.setBounds(5,218,130,36);
+		removeButton.setBounds(5,259,130,36);
+
+        //add Action Listeners
+        newEventButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                newEventButtonActionPerformed(e);
+
+            }
+        });
 		
 		//add components to panel
 
         this.add(eventLabel);
-		this.add(eventDayComboBox);
-		this.add(eventDayJList);
-		this.add(eventDayAddButton);
-		this.add(eventDayRemoveButton);
+		this.add(newEventButton);
+		this.add(eventDayScrollPane);
+		this.add(editButton);
+		this.add(removeButton);
 	
 		
 	}//end Constructor
+
+    //Action performed
+
+    public void newEventButtonActionPerformed(ActionEvent e){
+
+        NewEventFrame newEventFrame = new NewEventFrame();
+
+    }
 	
 }//end EventDay
 
