@@ -44,7 +44,13 @@ public class GetProjectOrCreateNew extends JPanel {
 
 		JPanel previous = new PreviousProjects();
 		previous.setBounds(330, 10, 630, 200);
-
+		
+		// make giant submit button
+		JButton goBtn = new JButton("GO!");
+		goBtn.setBounds(10, 210, 670, 250);
+		goBtn.setVisible(true);
+		
+		add(goBtn);
 		add(previous);
 		add(NewFile);
 

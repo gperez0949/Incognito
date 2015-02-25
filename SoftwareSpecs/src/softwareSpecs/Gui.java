@@ -5,17 +5,12 @@ package src.softwareSpecs;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.GridLayout;
 import java.awt.Toolkit;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.FileNotFoundException;
 
-import javax.swing.JButton;
 import javax.swing.JComponent;
-import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
@@ -57,7 +52,7 @@ public class Gui extends JFrame {
 		 */
 		JComponent panel1 = new JPanel();
 		tabbedPane.addTab(
-				"<html><H3 color=\"#00b2b2\">Step 1 Get Text File</H3></html>",
+				"<html><H3 color=\"#00b2b2\">Open File</H3></html>",
 				panel1);
 		tabbedPane.setMnemonicAt(0, KeyEvent.VK_1);
 		panel1.setSize(700, 500);
@@ -69,7 +64,7 @@ public class Gui extends JFrame {
 		// start panel 2
 		JComponent panel2 = new JPanel();
 		tabbedPane
-				.addTab("<html><H3 color=\"#00b2b2\">Step 2 Data Extraction</H3></html>",
+				.addTab("<html><H3 color=\"#00b2b2\">Data Settings</H3></html>",
 						panel2);
 		tabbedPane.setMnemonicAt(1, KeyEvent.VK_2);
 
@@ -81,6 +76,8 @@ public class Gui extends JFrame {
 
 		// start panel 3
 		JComponent panel3 = new JPanel();
+		tabbedPane.addTab("<html><H3 color=\"#00b2b2\">Graphs</H3></html>",panel3);
+
 
 		tabbedPane.addTab("<html><H3 color=\"#00b2b2\">Step 3 Graphing</H3></html>",panel3);
 		tabbedPane.setMnemonicAt(2, KeyEvent.VK_3);
@@ -95,7 +92,6 @@ public class Gui extends JFrame {
 		tabbedPane.setMnemonicAt(2, KeyEvent.VK_3);
 
 		panel3.setSize(700, 500);
-
 		panel3.setVisible(true);
 		panel3.add(new Graphs());
 		// end panel 3
@@ -106,7 +102,7 @@ public class Gui extends JFrame {
 
 
         JComponent panel4 = new JPanel();
-        tabbedPane.addTab("<html><H3 color=\"#00b2b2\">Step 4 Export</H3></html>", panel4);
+        tabbedPane.addTab("<html><H3 color=\"#00b2b2\">Export</H3></html>", panel4);
         tabbedPane.setMnemonicAt(3, KeyEvent.VK_4);
         panel4.setSize(700,500);
         panel4.setVisible(true);
