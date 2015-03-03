@@ -30,7 +30,7 @@ public class Gui extends JFrame {
 		Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
 		this.setLocation(dim.width / 2 - this.getSize().width / 2, dim.height
 				/ 2 - this.getSize().height / 2);
-		this.setTitle("Traffex Graphing Utility");
+		this.setTitle("DynamicStat");
 
 		JPanel wrapper = new JPanel();
 		wrapper.setLayout(new BorderLayout());
@@ -45,6 +45,7 @@ public class Gui extends JFrame {
 
 		JTabbedPane tabbedPane = new JTabbedPane();
 		tabbedPane.setBackground(Color.decode("#014D33"));// FGCU Green
+
 
 		/*
 		 * @setMnemonicAt by pressing alt and some number allows use to navigate
@@ -87,7 +88,7 @@ public class Gui extends JFrame {
 		panel3.setSize(700,500);
 
 		tabbedPane
-				.addTab("<html><H3 color=\"#00b2b2\">Step 3 Graphing and Export</H3></html>",
+				.addTab("<html><H3 color=\"#00b2b2\">Graphs</H3></html>",
 						panel3);
 		tabbedPane.setMnemonicAt(2, KeyEvent.VK_3);
 
