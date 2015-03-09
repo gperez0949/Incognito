@@ -13,6 +13,8 @@ import javax.swing.JPanel;
 
 public class GetProjectOrCreateNew extends JPanel {
 	public File selectedFile;
+    public JButton goBtn;
+    JButton btnFile;
 
 	public GetProjectOrCreateNew() {
 		this.setLayout(null);
@@ -31,7 +33,7 @@ public class GetProjectOrCreateNew extends JPanel {
 		this.add(newProject);
 		
 
-		JButton btnFile = new JButton("Click to choose file");
+		btnFile = new JButton("Click to choose file");
 		btnFile.setBounds(10, 20, 200, 50);
 		btnFile.addActionListener(new ActionListener() {
 			@Override
@@ -46,7 +48,7 @@ public class GetProjectOrCreateNew extends JPanel {
 		previous.setBounds(330, 10, 630, 200);
 		
 		// make giant submit button
-		JButton goBtn = new JButton("GO!");
+		goBtn = new JButton("GO!");
 		goBtn.setBounds(10, 210, 670, 250);
 		goBtn.setVisible(true);
 		

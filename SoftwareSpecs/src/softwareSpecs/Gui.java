@@ -6,9 +6,13 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 import javax.swing.JComponent;
 import javax.swing.JFrame;
@@ -18,6 +22,13 @@ import javax.swing.border.EmptyBorder;
 
 public class Gui extends JFrame {
 	private File selectedFile;
+    public String[] routes;
+    public String[] dates;
+    public String[]times;
+    HashMap<String,double[]> avgTravelTimes;         //<route name , average travel time>
+    HashMap<String,double[]> avgSpeeds;              //<route name , average speed>
+    HashMap<String,HashMap<String,double[]>> data;   //<date, <route name, travel time>> read from raw data.
+
 
 	public Gui() throws FileNotFoundException {
 
@@ -51,7 +62,7 @@ public class Gui extends JFrame {
 		 * @setMnemonicAt by pressing alt and some number allows use to navigate
 		 * the tabs
 		 */
-		JComponent panel1 = new JPanel();
+        GetProjectOrCreateNew panel1 = new GetProjectOrCreateNew();
 		tabbedPane.addTab(
 				"<html><H3 color=\"#00b2b2\">Open File</H3></html>",
 				panel1);
@@ -59,7 +70,6 @@ public class Gui extends JFrame {
 		panel1.setSize(700, 500);
 		panel1.setVisible(true);
 		panel1.setLayout(null);
-		panel1.add(new GetProjectOrCreateNew());
 		// end panel 1
 
 		// start panel 2
@@ -72,7 +82,7 @@ public class Gui extends JFrame {
 		panel2.setSize(700, 500);
 		panel2.setVisible(true);
 		panel2.setLayout(null);
-		panel2.add(new DataSettings());
+		panel2.add(new DataSettings(routes, dates, times));
 		// end panel 2
 
 		// start panel 3
@@ -112,7 +122,72 @@ public class Gui extends JFrame {
         panel4.add(export);
 
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        //add actionlisteners
+        panel1.goBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                goButtonActionPerformed(e);
+            }
+        });
+
+        panel1.btnFile.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                createNewButtonActionPerformed(e);
+            }
+        });
+
+
 	}// end Gui
+
+    /**
+     *
+     *Action Handlers
+     *
+     */
+
+    /**
+     * handles action when go button is pressed
+     *
+     * enables all tabs and loads all project data into program.
+     *
+     * @param e
+     */
+    public void goButtonActionPerformed(ActionEvent e){
+
+
+
+
+
+
+
+
+
+    } //end goButton
+
+    /**
+     * handles action when create new button is pressed
+     *
+     * enables the data settings button and loads raw data into program
+     *
+     * Also creates all files and folders in the project workspace
+     *
+     *
+     * @param e
+     */
+    public void createNewButtonActionPerformed(ActionEvent e){
+
+
+
+
+
+
+
+
+
+
+    }  //end create new Button
 
 	public static void main(String[] args) throws FileNotFoundException {
 		new Gui();

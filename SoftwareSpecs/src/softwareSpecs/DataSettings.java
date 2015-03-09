@@ -2,23 +2,24 @@ package src.softwareSpecs;
 
 import java.awt.Color;
 import java.awt.event.ActionEvent;
+import java.util.*;
 import java.awt.event.ActionListener;
 import javax.swing.*;
 
 public class DataSettings extends JPanel{
 	
-	public DataSettings(){
+	public DataSettings(String[] routes, String[] dates, String[] times){
 		
 		this.setLayout(null);
 		this.setSize(700, 500);
 		this.setVisible(true);
 		//this.setBackground(Color.green);
 		
-		TimeInterval timeInterval = new TimeInterval();
-		RoutePanel northBound = new RoutePanel("NorthBound");
-        RoutePanel southBound = new RoutePanel("SouthBound");
-        RoutePanel eastBound = new RoutePanel("EastBound");
-        RoutePanel westBound = new RoutePanel("WestBound");
+		TimeInterval timeInterval = new TimeInterval(dates,times);
+		RoutePanel northBound = new RoutePanel("NorthBound", routes);
+        RoutePanel southBound = new RoutePanel("SouthBound", routes);
+        RoutePanel eastBound = new RoutePanel("EastBound", routes);
+        RoutePanel westBound = new RoutePanel("WestBound", routes);
 		EventDay eventDay = new EventDay();
 		Submit submit = new Submit();
 		
@@ -64,33 +65,18 @@ public class DataSettings extends JPanel{
 
 class TimeInterval extends JPanel{
 	
-	public TimeInterval(){
+	public TimeInterval(String[] dates, String[] times){
 		
 		//set Layout
 		this.setLayout(null);
 				
 		//initialize components for timeInterval panel
 		JLabel timeIntervalLabel = new JLabel("Time Interval: ");
-		JComboBox startDay = new JComboBox();
-		JComboBox endDay = new JComboBox();
-		JComboBox startTime = new JComboBox();
-		JComboBox endTime = new JComboBox();
-				
-		String day[] = new String[2];
-		String time[] = new String[2];
-		
-		day[0] = "Start Day";
-		day[1] = "End Day";
-		
-		time[1] = "End Time";
-		time[0] = "Start Time";	
-		
-		//next four lines needs some work. method addItem doesn't add an entire array...
-		//todo see above
-		startDay.addItem(day[0]);
-		endDay.addItem(day[1]);
-		startTime.addItem(time[0]);
-		endTime.addItem(time[1]);
+		JComboBox startDay = new JComboBox(dates);
+		JComboBox endDay = new JComboBox(dates);
+		JComboBox startTime = new JComboBox(times);
+		JComboBox endTime = new JComboBox(times);
+
 		
 		//set location for components for timeInterval panel
 		timeIntervalLabel.setBounds(10, 10, 130, 36);
@@ -121,10 +107,7 @@ class RoutePanel extends JPanel{
     JButton routeRemoveButton;
     DefaultListModel routeListModel;
 	
-	public RoutePanel(String routeDirection){
-
-        //Create String Array for ComboBox
-        String[] routes = {"A to B" , "B to G", "G to A"};
+	public RoutePanel(String routeDirection, String[] routes){
 
 		//initialize components for northbound panel
         directionCheckBox = new JCheckBox();
