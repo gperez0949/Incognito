@@ -31,6 +31,9 @@ public class Gui extends JFrame {
 
 
 	public Gui() throws FileNotFoundException {
+        routes = new String[5];  //todo
+        dates = new String[5];
+        times = new String[5];
 
 		this.setSize(720, 580);// set size
 		this.setResizable(false);// can't resize
