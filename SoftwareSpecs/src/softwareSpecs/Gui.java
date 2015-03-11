@@ -117,6 +117,7 @@ public class Gui extends JFrame {
 		Export export = new Export();
 		panel4.add(export);
 
+
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		panel2.setVisible(false);
 		panel3.setVisible(false);
