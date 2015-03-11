@@ -1,5 +1,5 @@
 //last edit by James Palmisano
-//at 2/2/15
+//at 3/11/15
 package src.softwareSpecs;
 
 import java.awt.BorderLayout;
@@ -18,8 +18,6 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.border.EmptyBorder;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
 
 public class Gui extends JFrame {
 	private File selectedFile;
@@ -34,12 +32,12 @@ public class Gui extends JFrame {
 														// from raw data.
 
 	public Gui() throws FileNotFoundException {
-		routes = new String[5]; // todo
+		routes = new String[5];
 		dates = new String[5];
 		times = new String[5];
 
 		this.setSize(720, 580);// set size
-		this.setResizable(false);// can't resize
+		this.setResizable(true);// can resize
 		this.getContentPane().setBackground(Color.decode("#001F48"));// FGCU//
 																		// Blue
 
@@ -158,8 +156,8 @@ public class Gui extends JFrame {
 				tabbedPane.setEnabledAt(2, false);
 				tabbedPane.setEnabledAt(3, false);
 				tabbedPane.setSelectedIndex(1);
-			}//end action listener 
-		});//end add action listener
+			}// end action listener
+		});// end add action listener
 
 		panel1.btnFile.addActionListener(new ActionListener() {
 			@Override
