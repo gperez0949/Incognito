@@ -7,6 +7,8 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 
 public class DataSettings extends JPanel{
+
+    Submit submitPanel;
 	
 	public DataSettings(String[] routes, String[] dates, String[] times){
 		
@@ -21,7 +23,7 @@ public class DataSettings extends JPanel{
         RoutePanel eastBound = new RoutePanel("EastBound", routes);
         RoutePanel westBound = new RoutePanel("WestBound", routes);
 		EventDay eventDay = new EventDay();
-		Submit submit = new Submit();
+		submitPanel = new Submit();
 		
 		//timeInterval.setBackground(Color.cyan);
 		//northBound.setBackground(Color.red);
@@ -37,7 +39,7 @@ public class DataSettings extends JPanel{
 		eastBound.setLayout(null);
 		westBound.setLayout(null);
 		eventDay.setLayout(null);
-		submit.setLayout(null);
+		submitPanel.setLayout(null);
 		
 		//set location of panels
 		timeInterval.setBounds(0, 0, 700, 100);
@@ -46,7 +48,7 @@ public class DataSettings extends JPanel{
 		eastBound.setBounds(280, 100, 140, 300);
 		westBound.setBounds(420, 100, 140, 300);
 		eventDay.setBounds(560, 100, 140, 300);
-		submit.setBounds(0, 400, 700, 100);
+		submitPanel.setBounds(0, 400, 700, 100);
 		
 				
 		
@@ -57,7 +59,7 @@ public class DataSettings extends JPanel{
 		this.add(eastBound);
 		this.add(westBound);
 		this.add(eventDay);
-		this.add(submit);
+		this.add(submitPanel);
 		
 	}
 
