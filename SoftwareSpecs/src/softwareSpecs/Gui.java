@@ -24,7 +24,7 @@ public class Gui extends JFrame {
 	private File selectedFile;
     public String[] routes;
     public String[] dates;
-    public String[]times;
+    public String[] times;
     HashMap<String,double[]> avgTravelTimes;         //<route name , average travel time>
     HashMap<String,double[]> avgSpeeds;              //<route name , average speed>
     HashMap<String,HashMap<String,double[]>> data;   //<date, <route name, travel time>> read from raw data.
@@ -36,7 +36,7 @@ public class Gui extends JFrame {
         times = new String[5];
 
 		this.setSize(720, 580);// set size
-		this.setResizable(false);// can't resize
+		this.setResizable(true);// can resize
 		this.getContentPane().setBackground(Color.decode("#001F48"));// FGCU//
 																		// Blue
 
