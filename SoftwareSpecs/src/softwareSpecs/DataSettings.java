@@ -15,6 +15,9 @@ public class DataSettings extends JPanel{
 		this.setLayout(null);
 		this.setSize(700, 500);
 		this.setVisible(true);
+		
+		
+		
 		//this.setBackground(Color.green);
 		
 		TimeInterval timeInterval = new TimeInterval(dates,times);
