@@ -1,5 +1,5 @@
 //last edit by James Palmisano
-//at 2/2/15
+//at 3/11/15
 package src.softwareSpecs;
 
 import java.awt.BorderLayout;
@@ -11,7 +11,6 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
 import java.util.HashMap;
 
 import javax.swing.JComponent;
@@ -22,18 +21,20 @@ import javax.swing.border.EmptyBorder;
 
 public class Gui extends JFrame {
 	private File selectedFile;
-    public String[] routes;
-    public String[] dates;
-    public String[] times;
-    HashMap<String,double[]> avgTravelTimes;         //<route name , average travel time>
-    HashMap<String,double[]> avgSpeeds;              //<route name , average speed>
-    HashMap<String,HashMap<String,double[]>> data;   //<date, <route name, travel time>> read from raw data.
-
+	public String[] routes;
+	public String[] dates;
+	public String[] times;
+	HashMap<String, double[]> avgTravelTimes; // <route name , average travel
+												// time>
+	HashMap<String, double[]> avgSpeeds; // <route name , average speed>
+	HashMap<String, HashMap<String, double[]>> data; // <date, <route name,
+														// travel time>> read
+														// from raw data.
 
 	public Gui() throws FileNotFoundException {
-        routes = new String[5];
-        dates = new String[5];
-        times = new String[5];
+		routes = new String[5];
+		dates = new String[5];
+		times = new String[5];
 
 		this.setSize(720, 580);// set size
 		this.setResizable(true);// can resize
@@ -57,17 +58,15 @@ public class Gui extends JFrame {
 		 */
 		// start panel 1
 
-		JTabbedPane tabbedPane = new JTabbedPane();
+		final JTabbedPane tabbedPane = new JTabbedPane();
 		tabbedPane.setBackground(Color.decode("#014D33"));// FGCU Green
-
 
 		/*
 		 * @setMnemonicAt by pressing alt and some number allows use to navigate
 		 * the tabs
 		 */
-        GetProjectOrCreateNew panel1 = new GetProjectOrCreateNew();
-		tabbedPane.addTab(
-				"<html><H3 color=\"#00b2b2\">Open File</H3></html>",
+		final GetProjectOrCreateNew panel1 = new GetProjectOrCreateNew();
+		tabbedPane.addTab("<html><H3 color=\"#00b2b2\">Open File</H3></html>",
 				panel1);
 		tabbedPane.setMnemonicAt(0, KeyEvent.VK_1);
 		panel1.setSize(700, 500);
@@ -76,33 +75,27 @@ public class Gui extends JFrame {
 		// end panel 1
 
 		// start panel 2
-		JComponent panel2 = new JPanel();
+		final JComponent panel2 = new JPanel();
 		tabbedPane
 				.addTab("<html><H3 color=\"#00b2b2\">Data Settings</H3></html>",
 						panel2);
 		tabbedPane.setMnemonicAt(1, KeyEvent.VK_2);
-
+		panel2.setVisible(false);
 		panel2.setSize(700, 500);
-		panel2.setVisible(true);
 		panel2.setLayout(null);
 		panel2.add(new DataSettings(routes, dates, times));
 		// end panel 2
 
 		// start panel 3
-		JComponent panel3 = new JPanel();
-		tabbedPane.addTab("<html><H3 color=\"#00b2b2\">Graphs</H3></html>",panel3);
-
-
-		tabbedPane.addTab("<html><H3 color=\"#00b2b2\">Step 3 Graphing</H3></html>",panel3);
+		final JComponent panel3 = new JPanel();
+		tabbedPane.addTab("<html><H3 color=\"#00b2b2\">Graphs</H3></html>",
+				panel3);
 		tabbedPane.setMnemonicAt(2, KeyEvent.VK_3);
 
+		panel3.setSize(700, 500);
 
-		
-		panel3.setSize(700,500);
-
-		tabbedPane
-				.addTab("<html><H3 color=\"#00b2b2\">Graphs</H3></html>",
-						panel3);
+		tabbedPane.addTab("<html><H3 color=\"#00b2b2\">Graphs</H3></html>",
+				panel3);
 		tabbedPane.setMnemonicAt(2, KeyEvent.VK_3);
 
 		panel3.setSize(700, 500);
@@ -114,83 +107,91 @@ public class Gui extends JFrame {
 		this.add(wrapper);
 		this.show();
 
-
-        JComponent panel4 = new JPanel();
-        tabbedPane.addTab("<html><H3 color=\"#00b2b2\">Export</H3></html>", panel4);
-        tabbedPane.setMnemonicAt(3, KeyEvent.VK_4);
-        panel4.setSize(700,500);
-        panel4.setVisible(true);
-        panel4.setLayout(null);
-        Export export = new Export();
-        panel4.add(export);
+		final JComponent panel4 = new JPanel();
+		tabbedPane.addTab("<html><H3 color=\"#00b2b2\">Export</H3></html>",
+				panel4);
+		tabbedPane.setMnemonicAt(3, KeyEvent.VK_4);
+		panel4.setSize(700, 500);
+		panel4.setVisible(true);
+		panel4.setLayout(null);
+		Export export = new Export();
+		panel4.add(export);
 
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		panel2.setVisible(false);
+		panel3.setVisible(false);
+		panel4.setVisible(false);
+		// change their title colors as well
+		tabbedPane.setTitleAt(1,
+				"<html><H3 color=\"#3D3D4C\">Data Settings</H3></html>");
+		tabbedPane.setTitleAt(2,
+				"<html><H3 color=\"#3D3D4C\">Graphs</H3></html>");
+		tabbedPane.setTitleAt(3,
+				"<html><H3 color=\"#3D3D4C\">Export</H3></html>");
+		// make sure they are not active in the
+		// tabbed pane as well
+		tabbedPane.setEnabledAt(1, false);
+		tabbedPane.setEnabledAt(2, false);
+		tabbedPane.setEnabledAt(3, false);
+		// add actionlisteners
+		panel1.goBtn.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				panel1.setVisible(false);
+				panel2.setVisible(true);
+				panel3.setVisible(false);
+				panel4.setVisible(false);
+				// change their title colors as well
+				tabbedPane
+						.setTitleAt(1,
+								"<html><H3 color=\"#00b2b2\">Data Settings</H3></html>");
+				tabbedPane.setTitleAt(2,
+						"<html><H3 color=\"#3D3D4C\">Graphs</H3></html>");
+				tabbedPane.setTitleAt(3,
+						"<html><H3 color=\"#3D3D4C\">Export</H3></html>");
+				// make sure they are not active in the
+				// tabbed pane as well
+				tabbedPane.setEnabledAt(0, true);
+				tabbedPane.setEnabledAt(1, true);
+				tabbedPane.setEnabledAt(2, false);
+				tabbedPane.setEnabledAt(3, false);
+				tabbedPane.setSelectedIndex(1);
+			}// end action listener
+		});// end add action listener
 
-        //add actionlisteners
-        panel1.goBtn.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                goButtonActionPerformed(e);
-            }
-        });
-
-        panel1.btnFile.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                createNewButtonActionPerformed(e);
-            }
-        });
-
+		panel1.btnFile.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				createNewButtonActionPerformed(e);
+			}
+		});
 
 	}// end Gui
 
-    /**
-     *
-     *Action Handlers
-     *
-     */
+	/**
+	 * handles action when go button is pressed
+	 *
+	 * enables all tabs and loads all project data into program.
+	 *
+	 * @param e
+	 */
+	public void goButtonActionPerformed(ActionEvent e) {
 
-    /**
-     * handles action when go button is pressed
-     *
-     * enables all tabs and loads all project data into program.
-     *
-     * @param e
-     */
-    public void goButtonActionPerformed(ActionEvent e){
+	} // end goButton
 
+	/**
+	 * handles action when create new button is pressed
+	 *
+	 * enables the data settings button and loads raw data into program
+	 *
+	 * Also creates all files and folders in the project workspace
+	 *
+	 *
+	 * @param e
+	 */
+	public void createNewButtonActionPerformed(ActionEvent e) {
 
-
-
-
-
-
-
-
-    } //end goButton
-
-    /**
-     * handles action when create new button is pressed
-     *
-     * enables the data settings button and loads raw data into program
-     *
-     * Also creates all files and folders in the project workspace
-     *
-     *
-     * @param e
-     */
-    public void createNewButtonActionPerformed(ActionEvent e){
-
-
-
-
-
-
-
-
-
-
-    }  //end create new Button
+	} // end create new Button
 
 	public static void main(String[] args) throws FileNotFoundException {
 		new Gui();

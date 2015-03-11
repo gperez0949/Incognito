@@ -45,6 +45,6 @@ public class Graphs extends JPanel {
 		ArrayList<double[]> data = read.getData();
 		ArrayList<String> names = read.getNames();
 		ArrayList<Integer> types = read.getTypes();
-
+		
 	}
 }
