@@ -23,7 +23,7 @@ public class DataReader {
         // File("/Users/austinnafziger/SoftwareProject/SoftwareSpecs/processed.dat"));
 
 
-        BufferedReader br = new BufferedReader(new FileReader("/Users/austinnafziger/Software/SoftwareSpecs/processed.dat"));
+        BufferedReader br = new BufferedReader(new FileReader("C:/Users/Gabriel/Incognito/SoftwareSpecs/processed.dat"));
 
         try {
 

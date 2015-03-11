@@ -14,14 +14,9 @@ import java.io.IOException;
  */
 public class Excelerator {
 
-    private String inputFile;
 
-    public void setInputFile(String input){
 
-        inputFile = input;
-    }
-
-    public Excelerator() throws IOException {
+    public Excelerator(String inputFile) throws IOException {
 
 
 
@@ -30,12 +25,16 @@ public class Excelerator {
         try {
             w = Workbook.getWorkbook(inputWorkbook);
             // Get the first sheet
+
             Sheet sheet = w.getSheet(0);
             // Loop over first 10 column and lines
 
+            Cell date = sheet.getCell(1,7);
+            System.out.println(date.getContents());
+
             for (int j = 0; j < sheet.getColumns(); j++) {
-                for (int i = 0; i < sheet.getRows(); i++) {
-                    Cell cell = sheet.getCell(j, i);
+                for (int i = 17; i < sheet.getRows(); i++) {
+                    Cell cell = sheet.getCell(j,i);
                     CellType type = cell.getType();
                     if (type == CellType.LABEL) {
                         System.out.println("I got a label "
