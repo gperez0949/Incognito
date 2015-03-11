@@ -59,7 +59,8 @@ public class Gui extends JFrame {
 		
 		JTabbedPane tabbedPane = new JTabbedPane();
 		
-		
+		tabbedPane.addTab
+		("<html><font color=\"grey\">Step 1 Get Text File</font></html>", panel1);
 
 		// make TabbedPane
 		//JTabbedPane tabbedPane = new JTabbedPane();
@@ -69,13 +70,13 @@ public class Gui extends JFrame {
 		 * @setMnemonicAt by pressing alt and some number allows use to navigate
 		 * the tabs
 		 */
-		tabbedPane.addTab("<html><H3 color=\"#00b2b2\">Step 1 Get Text File</H3></html>",panel1);
+		tabbedPane.addTab("<html><H3 color=\"White\">Step 1 Get Text File</H3></html>",panel1);
 		tabbedPane.setMnemonicAt(0, KeyEvent.VK_1);
 		//end panel 1
 		
 		//start panel 2
 		JComponent panel2 = new JPanel();
-		tabbedPane.addTab("<html><H3 color=\"#00b2b2\">Step 2 Data Extraction</H3></html>",panel2);
+		tabbedPane.addTab("<html><H3 color=\"White\">Step 2 Data Extraction</H3></html>",panel2);
 		tabbedPane.setMnemonicAt(1, KeyEvent.VK_2);
 
 		panel2.setSize(700, 500);
@@ -84,7 +85,7 @@ public class Gui extends JFrame {
 		panel2.add(new DataSettings());
 
 		JComponent panel3 = new JPanel();
-		tabbedPane.addTab("<html><H3 color=\"#00b2b2\">Step 3 Graphing and Export</H3></html>",panel3);
+		tabbedPane.addTab("<html><H3 color=\"White\">Step 3 Graphing and Export</H3></html>",panel3);
 		tabbedPane.setMnemonicAt(2, KeyEvent.VK_3);
 		
 		panel3.setSize(700,500);

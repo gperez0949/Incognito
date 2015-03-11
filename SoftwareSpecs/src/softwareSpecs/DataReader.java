@@ -18,8 +18,6 @@ public class DataReader {
 		numOfElements = Integer.parseInt(scan.nextLine());
 		
 		data = new ArrayList<double[]>();
-		
-		
 	}
 	
 	public int getPairs(){

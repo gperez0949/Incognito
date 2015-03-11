@@ -137,6 +137,8 @@ class NorthBound extends JPanel{
 		northboundAddButton.setBounds(5,218,130,36);
 		northboundRemoveButton.setBounds(5,259,130,36);
 		
+		//northboundCheckBox.addActionListener
+		
 		//add components to northbound panel
 		this.add(northboundCheckBox);
 		this.add(northboundComboBox);
@@ -145,6 +147,14 @@ class NorthBound extends JPanel{
 		this.add(northboundRemoveButton);
 				
 	}//end Constructor
+	
+	/**
+	 * ActionListeners
+	 * 
+	 */
+	
+	
+	
 	
 }//end NorthBound
 
