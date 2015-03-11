@@ -60,7 +60,7 @@ public class DataReader {
             br.close();// close file when we are done with it
 
         } catch (IOException e) {
-            
+
             e.printStackTrace();
         }
     }

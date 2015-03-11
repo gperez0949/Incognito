@@ -31,7 +31,7 @@ public class Gui extends JFrame {
 
 
 	public Gui() throws FileNotFoundException {
-        routes = new String[5];  //todo
+        routes = new String[5];
         dates = new String[5];
         times = new String[5];
 
