@@ -16,71 +16,77 @@ public class DataReader {
 
 	public DataReader() throws FileNotFoundException {
 
-		// Scanner scan = new Scanner(new File(
-		// "C:/Users/Gabriel/Incognito/SoftwareSpecs/processed.dat"));
+        // Scanner scan = new Scanner(new File(
+        // "C:/Users/Gabriel/Incognito/SoftwareSpecs/processed.dat"));
 
-		// Scanner scan = new Scanner(new
-		// File("/Users/austinnafziger/SoftwareProject/SoftwareSpecs/processed.dat"));
-		BufferedReader br = new BufferedReader(new FileReader("processed.dat"));
-		try {
-			String line = br.readLine();
+        // Scanner scan = new Scanner(new
+        // File("/Users/austinnafziger/SoftwareProject/SoftwareSpecs/processed.dat"));
 
-			while (line != null) {
-				// do thing to vars here
-				numOfPairs = Integer.parseInt(line);
-				// get the next line
-				line = br.readLine();
-				numOfElements = Integer.parseInt(line);
 
-				data = new ArrayList<double[]>();
-				names = new ArrayList<String>();
-				types = new ArrayList<Integer>();
+        BufferedReader br = new BufferedReader(new FileReader("/Users/austinnafziger/Software/SoftwareSpecs/processed.dat"));
 
-				for (int i = 0; i < numOfPairs; i++) {
-					// get next line
-					line = br.readLine();
-					names.add(line);
-					line = br.readLine();
-					types.add(Integer.parseInt(line));
+        try {
 
-					for (int j = 0; j < numOfElements; j++) {
-						double[] temp = new double[numOfElements];
-						line = br.readLine();
-						temp[j] = Double.parseDouble(line);
-					}// end for
-				}// end for
+            String line = br.readLine();
 
-				line = br.readLine();
-			}// end while
-			br.close();// close file when we are done with it
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}// end catch
-	}// end DataReader
+            while (line != null) {
+
+                numOfPairs = Integer.parseInt(line);
+                line = br.readLine();
+                numOfElements = Integer.parseInt(line);
+
+                data = new ArrayList<double[]>();
+                names = new ArrayList<String>();
+                types = new ArrayList<Integer>();
+
+                for (int i = 0; i < numOfPairs; i++) {
+
+                    line = br.readLine();
+                    names.add(line);
+                    line = br.readLine();
+                    types.add(Integer.parseInt(line));
+
+                    for (int j = 0; j < numOfElements; j++) {
+
+                        double[] temp = new double[numOfElements];
+                        line = br.readLine();
+                        temp[j] = Double.parseDouble(line);
+                    }
+                }
+
+                line = br.readLine();
+            }
+
+            br.close();// close file when we are done with it
+
+        } catch (IOException e) {
+            
+            e.printStackTrace();
+        }
+    }
 
 	public int getPairs() {
 
 		return numOfPairs;
-	}// end getPairs
+	}
 
 	public int getElements() {
 
 		return numOfElements;
-	}// end getElements
+	}
 
 	public ArrayList<double[]> getData() {
 
 		return data;
-	}// end getData
+	}
 
 	public ArrayList<String> getNames() {
 
 		return names;
-	}// end getNames
+	}
 
 	public ArrayList<Integer> getTypes() {
 
 		return types;
-	}// end getTypes
-}// end dataReader class
+	}
+}
