@@ -292,11 +292,11 @@ class EventDay extends JPanel{
 }//end EventDay
 
 class Submit extends JPanel{
-	
+	public JButton submitButton;
 	public Submit(){
 		
 		//initialize components
-		JButton submitButton = new JButton("Submit");
+		submitButton = new JButton("Submit");
 		
 		//set location 
 		submitButton.setBounds(350-130/2,50-36/2,130,36);

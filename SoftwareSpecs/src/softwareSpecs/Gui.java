@@ -18,6 +18,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.border.EmptyBorder;
+import javax.swing.event.AncestorEvent;
+import javax.swing.event.AncestorListener;
 
 public class Gui extends JFrame {
 	private File selectedFile;
@@ -75,7 +77,7 @@ public class Gui extends JFrame {
 		// end panel 1
 
 		// start panel 2
-		final JComponent panel2 = new JPanel();
+		final DataSettings panel2 = new DataSettings(routes, dates, times);
 		tabbedPane
 				.addTab("<html><H3 color=\"#00b2b2\">Data Settings</H3></html>",
 						panel2);
@@ -83,7 +85,14 @@ public class Gui extends JFrame {
 		panel2.setVisible(false);
 		panel2.setSize(700, 500);
 		panel2.setLayout(null);
-		panel2.add(new DataSettings(routes, dates, times));
+		panel2.submitPanel.submitButton.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
 		// end panel 2
 
 		// start panel 3
