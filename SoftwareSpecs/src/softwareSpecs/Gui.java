@@ -1,5 +1,5 @@
 //last edit by James Palmisano
-//at 3/11/15
+//at 3/13/15
 package src.softwareSpecs;
 
 import java.awt.BorderLayout;
@@ -18,8 +18,6 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.border.EmptyBorder;
-import javax.swing.event.AncestorEvent;
-import javax.swing.event.AncestorListener;
 
 public class Gui extends JFrame {
 	private File selectedFile;
@@ -32,6 +30,8 @@ public class Gui extends JFrame {
 	HashMap<String, HashMap<String, double[]>> data; // <date, <route name,
 														// travel time>> read
 														// from raw data.
+	final JComponent panel3 = new JPanel();
+	final JComponent panel4 = new JPanel();
 
 	public Gui() throws FileNotFoundException {
 		routes = new String[5];
@@ -86,17 +86,31 @@ public class Gui extends JFrame {
 		panel2.setSize(700, 500);
 		panel2.setLayout(null);
 		panel2.submitPanel.submitButton.addActionListener(new ActionListener() {
-			
+			//When the submit btn is click do this...
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
-				
+
+				// change their title colors as well
+				tabbedPane
+						.setTitleAt(1,
+								"<html><H3 color=\"#00b2b2\">Data Settings</H3></html>");
+				tabbedPane.setTitleAt(2,
+						"<html><H3 color=\"#00b2b2\">Graphs</H3></html>");
+				tabbedPane.setTitleAt(3,
+						"<html><H3 color=\"#00b2b2\">Export</H3></html>");
+				// make sure they are not active in the
+				// tabbed pane as well
+				tabbedPane.setEnabledAt(0, true);
+				tabbedPane.setEnabledAt(1, true);
+				tabbedPane.setEnabledAt(2, true);
+				tabbedPane.setEnabledAt(3, true);
+				tabbedPane.setSelectedIndex(2);
+
 			}
 		});
 		// end panel 2
 
 		// start panel 3
-		final JComponent panel3 = new JPanel();
 		tabbedPane.addTab("<html><H3 color=\"#00b2b2\">Graphs</H3></html>",
 				panel3);
 		tabbedPane.setMnemonicAt(2, KeyEvent.VK_3);
@@ -115,8 +129,8 @@ public class Gui extends JFrame {
 		wrapper.add(tabbedPane);
 		this.add(wrapper);
 		this.show();
-
-		final JComponent panel4 = new JPanel();
+		// start panel 4
+		
 		tabbedPane.addTab("<html><H3 color=\"#00b2b2\">Export</H3></html>",
 				panel4);
 		tabbedPane.setMnemonicAt(3, KeyEvent.VK_4);
@@ -125,7 +139,7 @@ public class Gui extends JFrame {
 		panel4.setLayout(null);
 		Export export = new Export();
 		panel4.add(export);
-
+		// end panel 4
 
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		panel2.setVisible(false);
