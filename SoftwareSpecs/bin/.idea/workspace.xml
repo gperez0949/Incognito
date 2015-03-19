@@ -9,7 +9,7 @@
     <file path="/Gui.java" changelist="70b8b1ff-a55f-4710-ab04-0db9dcc6a30f" time="1426096736321" ignored="false" />
     <file path="/GetProjectOrCreateNew.java" changelist="70b8b1ff-a55f-4710-ab04-0db9dcc6a30f" time="1426088086012" ignored="false" />
     <file path="/fragment.java" changelist="70b8b1ff-a55f-4710-ab04-0db9dcc6a30f" time="1426087821384" ignored="false" />
-    <file path="/Excelerator.java" changelist="70b8b1ff-a55f-4710-ab04-0db9dcc6a30f" time="1426095683281" ignored="false" />
+    <file path="/Excelerator.java" changelist="70b8b1ff-a55f-4710-ab04-0db9dcc6a30f" time="1426690120223" ignored="false" />
     <file path="/TestExcelerator.java" changelist="70b8b1ff-a55f-4710-ab04-0db9dcc6a30f" time="1426093867309" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,7 +25,6 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -79,6 +78,7 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </line_breakpoints>
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -91,7 +91,7 @@
       <file leaf-file-name="Gui.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/softwareSpecs/Gui.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="67" column="108" selection-start="2117" selection-end="2117" vertical-scroll-proportion="0.0">
+            <state line="27" column="64" selection-start="661" selection-end="755" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -106,21 +106,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Excelerator.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Excelerator.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/softwareSpecs/Excelerator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="64" column="61" selection-start="1339" selection-end="1339" vertical-scroll-proportion="0.0">
+            <state line="97" column="81" selection-start="2874" selection-end="2874" vertical-scroll-proportion="1.7716627">
               <folding>
-                <marker date="1426096832129" expanded="true" signature="192:1096" placeholder="/**...*/" />
+                <marker date="1426690124207" expanded="true" signature="218:1451" placeholder="/**...*/" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TestExcelerator.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="TestExcelerator.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/softwareSpecs/TestExcelerator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="54" selection-start="545" selection-end="545" vertical-scroll-proportion="0.5175644">
+            <state line="11" column="69" selection-start="242" selection-end="242" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -138,7 +138,7 @@
       <file leaf-file-name="DataReader.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/softwareSpecs/DataReader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="78" selection-start="885" selection-end="885" vertical-scroll-proportion="0.0">
+            <state line="31" column="78" selection-start="843" selection-end="843" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -196,10 +196,10 @@
         <option value="$PROJECT_DIR$/src/softwareSpecs/GetProjectOrCreateNew.java" />
         <option value="$PROJECT_DIR$/src/softwareSpecs/DataReader.java" />
         <option value="$PROJECT_DIR$/src/softwareSpecs/TestExcelerator.java" />
-        <option value="$PROJECT_DIR$/src/softwareSpecs/Excelerator.java" />
         <option value="$PROJECT_DIR$/src/softwareSpecs/DataSettings.java" />
         <option value="$PROJECT_DIR$/src/softwareSpecs/Gui.java" />
         <option value="C:/Program Files/Java/jdk1.7.0_40/src.zip!/java/awt/EventQueue.java" />
+        <option value="$PROJECT_DIR$/src/softwareSpecs/Excelerator.java" />
       </list>
     </option>
   </component>
@@ -235,7 +235,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -289,6 +288,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -303,14 +303,14 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
-    <property name="FullScreen" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
+    <property name="FullScreen" value="false" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.searchVisible" value="true" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="dynamic.classpath" value="false" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
-  <component name="RunManager" selected="Application.Gui">
+  <component name="RunManager" selected="Application.TestExcelerator">
     <configuration default="false" name="Gui" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="src.softwareSpecs.Gui" />
       <option name="VM_PARAMETERS" />
@@ -373,19 +373,6 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method />
-    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -411,6 +398,19 @@
       <envs />
       <properties />
       <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -454,8 +454,8 @@
     </list>
     <recent_temporary>
       <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="Application.Gui" />
-        <item index="1" class="java.lang.String" itemvalue="Application.TestExcelerator" />
+        <item index="0" class="java.lang.String" itemvalue="Application.TestExcelerator" />
+        <item index="1" class="java.lang.String" itemvalue="Application.Gui" />
         <item index="2" class="java.lang.String" itemvalue="Application.NewEventFrame" />
       </list>
     </recent_temporary>
@@ -497,7 +497,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1" y="1" width="1918" height="1038" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -511,8 +511,8 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2516164" sideWeight="0.6852273" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31477273" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2516164" sideWeight="0.6852273" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31381217" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -656,30 +656,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/softwareSpecs/DataReader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="78" selection-start="885" selection-end="885" vertical-scroll-proportion="0.0">
+        <state line="31" column="78" selection-start="843" selection-end="843" vertical-scroll-proportion="0.0">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/softwareSpecs/Excelerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="61" selection-start="1339" selection-end="1339" vertical-scroll-proportion="0.0">
-          <folding>
-            <marker date="1426096832129" expanded="true" signature="192:1096" placeholder="/**...*/" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/softwareSpecs/DataSettings.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="66" column="65" selection-start="1848" selection-end="1848" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/softwareSpecs/Gui.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="108" selection-start="2117" selection-end="2117" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -693,8 +677,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/softwareSpecs/TestExcelerator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="54" selection-start="545" selection-end="545" vertical-scroll-proportion="0.5175644">
+        <state line="11" column="69" selection-start="242" selection-end="242" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/softwareSpecs/Gui.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="64" selection-start="661" selection-end="755" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/softwareSpecs/Excelerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="97" column="81" selection-start="2874" selection-end="2874" vertical-scroll-proportion="1.7716627">
+          <folding>
+            <marker date="1426690124207" expanded="true" signature="218:1451" placeholder="/**...*/" />
+          </folding>
         </state>
       </provider>
     </entry>

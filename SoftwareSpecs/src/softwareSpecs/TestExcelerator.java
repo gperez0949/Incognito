@@ -1,6 +1,7 @@
 package src.softwareSpecs;
 
 import java.io.IOException;
+import java.util.Set;
 
 /**
  * Created with IntelliJ IDEA.
@@ -14,8 +15,34 @@ public class TestExcelerator {
     public static void main(String[] args) {
 
         try {
-            Excelerator excelerator = new Excelerator("Corridor_Report.xls");
+            Excelerator excelerator = new Excelerator();
+            excelerator.setInputFile("/Users/austinnafziger/Software/SoftwareSpecs/Corridor_Report.xls");
+            excelerator.Read();
 
+            Set a = excelerator.data.keySet();
+            Object[] keys = a.toArray();
+
+            for(int i = 0; i < excelerator.data.size(); i++){
+
+                System.out.println(keys[i]);
+
+                Set b = excelerator.data.get(keys[i]).keySet();
+                Object[] routesKey = b.toArray();
+
+                for(int j = 0;j < excelerator.data.get(keys[i]).size();j++){
+
+                    System.out.println(routesKey[j]);
+
+                    for(double number: excelerator.data.get(keys[i]).get(routesKey[j])) {
+
+                        System.out.println(number);
+                    }
+
+                }
+
+
+
+            }
 
 
 
