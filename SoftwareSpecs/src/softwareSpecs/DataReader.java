@@ -19,11 +19,11 @@ public class DataReader {
         // Scanner scan = new Scanner(new File(
         // "C:/Users/Gabriel/Incognito/SoftwareSpecs/processed.dat"));
 
-        // Scanner scan = new Scanner(new
-        // File("/Users/austinnafziger/SoftwareProject/SoftwareSpecs/processed.dat"));
+        BufferedReader br = new BufferedReader(new
+                FileReader("/Users/austinnafziger/Software/SoftwareSpecs/processed.dat"));
 
 
-        BufferedReader br = new BufferedReader(new FileReader("processed.dat"));
+//        BufferedReader br = new BufferedReader(new FileReader("processed.dat"));
 
         try {
 
