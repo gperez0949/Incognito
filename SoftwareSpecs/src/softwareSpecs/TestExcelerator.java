@@ -22,6 +22,8 @@ public class TestExcelerator {
             Set a = excelerator.data.keySet();
             Object[] keys = a.toArray();
 
+            System.out.println(keys.length);
+
             for(int i = 0; i < excelerator.data.size(); i++){
 
                 System.out.println(keys[i]);
