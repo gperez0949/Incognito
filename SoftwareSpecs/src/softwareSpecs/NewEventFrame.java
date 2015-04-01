@@ -102,8 +102,6 @@ public class NewEventFrame extends JFrame {
             }
         });
 
-
-
         //add to frame
         this.add(newEventName);
         this.add(submitButton);
@@ -141,7 +139,6 @@ public class NewEventFrame extends JFrame {
     }//ends remove button
 
     public void submitButtonActionPerformed(ActionEvent e){
-
 
     }
 

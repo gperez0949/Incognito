@@ -15,7 +15,7 @@ public class TestAnalyze {
         try {
 
             Excelerator excelerator = new Excelerator();
-            excelerator.setInputFile("/Users/austinnafziger/Software/SoftwareSpecs/Corridor_Report.xls");
+            excelerator.setInputFile("C:\\Users\\Gabriel\\Documents\\Incognito\\SoftwareSpecs\\Corridor_Report.xls");
             excelerator.Read();
 
             //end reading
@@ -25,7 +25,7 @@ public class TestAnalyze {
 
             double startTime = System.nanoTime();
 
-            excelerator.Analyze("/Users/austinnafziger/Software/SoftwareSpecs/settings.dat");
+            excelerator.Analyze("C:\\Users\\Gabriel\\Documents\\Incognito\\SoftwareSpecs\\settings.dat");
 
             //end analyze
 
@@ -39,12 +39,6 @@ public class TestAnalyze {
         } catch (IOException e) {
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
         }
-
-
-
-
-
-        Excelerator e = new Excelerator();
 
 
 

@@ -3,6 +3,7 @@
   <component name="EclipseModuleManager">
     <libelement value="jar://$MODULE_DIR$/JGraphJars/jcommon-1.0.23.jar!/" />
     <libelement value="jar://$MODULE_DIR$/JGraphJars/jfreechart-1.0.19.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/ReadExcelJars/jxl.jar!/" />
     <src_description expected_position="0">
       <src_folder value="file://$MODULE_DIR$/" expected_position="0" />
     </src_description>
@@ -34,9 +35,9 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library">
-      <library>
+      <library name="jxl.jar">
         <CLASSES>
-          <root url="jar://$USER_HOME$/jexcelapi/jxl.jar!/" />
+          <root url="jar://$MODULE_DIR$/ReadExcelJars/jxl.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

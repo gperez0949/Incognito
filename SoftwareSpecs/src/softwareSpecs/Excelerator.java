@@ -14,11 +14,15 @@ import jxl.read.biff.BiffException;
  * Created by Austin Nafziger on 3/11/15.
  */
 public class Excelerator {
-    double[] distance;
-    LinkedHashMap<String, double[]> avgTravelTimes; // <route name , average travel time>
+    ArrayList<Double> distance;
+
+    //used to read into program
     LinkedHashMap<String, HashMap<String, double[]>> data; // <date, <route name,
                                                      // travel time>> read
                                                      // from raw data.
+
+    //built from analyzing data
+    LinkedHashMap<String, LinkedHashMap<String, ArrayList<Double>>> avgTravelTimes;  //<EventName, <routeName, Travel Times>>
 
 	private String inputFile;
 
@@ -47,7 +51,7 @@ public class Excelerator {
             for(int k = 0; k < w.getSheets().length - 1; k++){
                 Sheet sheet = w.getSheet(k);
 
-                avgTravelTimes = new LinkedHashMap<String, double[]>();
+                LinkedHashMap<String, double[]> avgTravelTimes = new LinkedHashMap<String, double[]>();
 
                 //get date
                 Cell date = sheet.getCell(1,7);
@@ -100,6 +104,9 @@ public class Excelerator {
 
     public void Analyze(String dataSettings) throws IOException{
 
+        //analyze will build this HashMap
+        avgTravelTimes = new LinkedHashMap<String, LinkedHashMap<String, ArrayList<Double>>>();
+
         File file = new File("processed.dat");
         PrintWriter writer = new PrintWriter(file);
 
@@ -120,7 +127,7 @@ public class Excelerator {
          */
 
         Scanner scan = new Scanner(new File(dataSettings));
-        scan.useDelimiter("\n");
+        scan.useDelimiter("\r\n");
         String startDate = scan.next();
         String endDate = scan.next();
         int startTime = Integer.parseInt(scan.next());
@@ -184,60 +191,97 @@ public class Excelerator {
         Set b = data.get(keys[3]).keySet();
         Object[] routesKey = b.toArray();
 
-        for(int i = 0; i < routesKey.length; i ++){
+        //for each event type
+        for(int w = 0; w < events.size()+1; w++){
+
+            LinkedHashMap<String,ArrayList<Double>> avgRoutes = new LinkedHashMap<String, ArrayList<Double>>();
+            //for each route
+            for(int i = 0; i < routesKey.length; i++){
 
 
+                ArrayList<Double> avgRouteData = new ArrayList<Double>();
 
-            //check if route is selected and in the an enables direction. Otherwise ignore.
-            if((northRoutes.contains(routesKey[i]) && north.equals("true"))||(southRoutes.contains(routesKey[i])&& south.equals("true"))
-                    ||(eastRoutes.contains(routesKey[i])&&east.equals("true"))||(westRoutes.contains(routesKey[i])&& west.equals("true"))){
+                try{
 
-                System.out.println("route: " + routesKey[i]);
+                //check if route is selected and in the an enables direction. Otherwise ignore.
+                if((northRoutes.contains(routesKey[i]) && north.equals("true"))||(southRoutes.contains(routesKey[i])&& south.equals("true"))
+                        ||(eastRoutes.contains(routesKey[i])&&east.equals("true"))||(westRoutes.contains(routesKey[i])&& west.equals("true"))){
 
-
-                //for all cells in the time interval
-                for(int j = startTime; j < endTime;j++){
-
-                    System.out.println("cells");
-                    ArrayList<Double> nonEventTravelTimes = new ArrayList<Double>();
-
-                    //for each date
-                    for(int k = 0; k < keys.length; k++){
-
-                        System.out.println(keys.length);
-
-                        //check if date is an event date
-                        boolean isEvent = false;
-                        for(int n = 0 ; n < events.size(); n++) {
-                            if (events.get(n).contains(keys[k])) {
-                                //is event
-
-                                writer.println(keys[k]);
-                                isEvent = true;
+                    System.out.println("route: " + routesKey[i]);
+                    writer.println("route: " + routesKey[i]);
 
 
+                    //for all cells in the time interval
+                    for(int j = startTime-1; j < endTime;j++){
+
+                        //System.out.println("cells");
+                        ArrayList<Double> nonEventTravelTimes = new ArrayList<Double>();
+
+                        //for each date
+                        for(int k = 0; k < keys.length-1; k++){
+
+                            //check if date is an event date
+                            boolean isEvent = false;
+                            for(int n = 0 ; n < events.size(); n++) {
+                                if (events.get(n).contains(keys[k])){
+
+                                    if(w > 0 && events.get(w-1).contains(keys[k])){
+
+                                        nonEventTravelTimes.add(data.get(keys[k]).get(routesKey[i])[j]);
+
+                                    }
+
+                                    isEvent = true;
+
+                                }
                             }
-                        }
-                        if (!isEvent) {
-                            //is not event
+                            if (!isEvent && w == 0){
+                                //is not event
 
-                            //add to arraylist of travel times
-                            //nonEventTravelTimes.add(data.get(keys[k]).get(routesKey[i])[j]);
+                                //add to arraylist of travel times
+                                nonEventTravelTimes.add(data.get(keys[k]).get(routesKey[i])[j]);
 
-                            //writer.println(data.get(keys[k]).get(routesKey[i])[j]);
-                            for(double dob: data.get(keys[k]).get(routesKey[i])){
+                                //writer.println("NonEventDay" +"\t"+ keys[k]+"\t"+data.get(keys[k]).get(routesKey[i])[j]);
+                                //for(double dob: data.get(keys[k]).get(routesKey[i])){
 
-                                //System.out.println(dob);
+
+
+                                  //  System.out.println(dob);
+                                //}
                             }
-                        }
 
 
 
-                    }//end for each date
-                }//end for cells
-            }//end if selected routes
-        }// end for all routes
+                        }//end for each date
 
+                        //add data to arraylist
+                        avgRouteData.add(takeAvg(nonEventTravelTimes));
+
+                        //write to process.dat to store data for future referance
+                        String average = String.format("%.3f",takeAvg(nonEventTravelTimes));
+                        writer.println(average);
+
+                    }//end for cells
+
+                    avgRoutes.put((String)routesKey[i],avgRouteData);
+
+
+                }//end if selected routes
+            }catch(NullPointerException n){
+
+            }
+
+
+            }// end for all routes
+            if(w==0){
+                avgTravelTimes.put("Non-Event", avgRoutes);
+            }else{
+                avgTravelTimes.put(events.get(w-1).get(0), avgRoutes);
+            }
+
+
+
+        }//end for each event
 
         writer.close();
 
@@ -276,4 +320,40 @@ public class Excelerator {
         }*/
 
     }
+
+    /**
+     * takes average of an array list of doubles.
+     *
+     * @param numbers
+     * @return  average
+     */
+    public double takeAvg(ArrayList<Double> numbers){
+
+
+        int countNeg1 = 0;//counts the number of negative 1s
+        double sum = 0;
+
+        for(int i = 0; i < numbers.size();i++){
+
+            //if the number is negative 1 do nothing
+            if(numbers.get(i) == -1.0){
+
+                countNeg1 += 1;
+                //do nothing
+
+            }else{
+
+            sum += numbers.get(i);
+            }
+
+
+        }
+
+        double average = sum/(numbers.size()-countNeg1);
+
+        return average;
+
+    }//end takeAvg
+
+
 }
