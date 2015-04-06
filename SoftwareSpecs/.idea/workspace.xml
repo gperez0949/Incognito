@@ -9,9 +9,10 @@
     <file path="/Gui.java" changelist="70b8b1ff-a55f-4710-ab04-0db9dcc6a30f" time="1426096736321" ignored="false" />
     <file path="/GetProjectOrCreateNew.java" changelist="70b8b1ff-a55f-4710-ab04-0db9dcc6a30f" time="1426088086012" ignored="false" />
     <file path="/fragment.java" changelist="70b8b1ff-a55f-4710-ab04-0db9dcc6a30f" time="1426087821384" ignored="false" />
-    <file path="/Excelerator.java" changelist="70b8b1ff-a55f-4710-ab04-0db9dcc6a30f" time="1427904516066" ignored="false" />
+    <file path="/Excelerator.java" changelist="70b8b1ff-a55f-4710-ab04-0db9dcc6a30f" time="1428345012144" ignored="false" />
     <file path="/TestExcelerator.java" changelist="70b8b1ff-a55f-4710-ab04-0db9dcc6a30f" time="1426093867309" ignored="false" />
     <file path="/TestAnalyze.java" changelist="70b8b1ff-a55f-4710-ab04-0db9dcc6a30f" time="1427831768631" ignored="false" />
+    <file path="/TestWriter.java" changelist="70b8b1ff-a55f-4710-ab04-0db9dcc6a30f" time="1428344723268" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,50 +99,35 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EventQueue.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.7.0_40/src.zip!/java/awt/EventQueue.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="102" column="0" selection-start="2896" selection-end="2896" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#0#47431#0" expanded="false" />
-                <element signature="imports" expanded="false" />
-                <element signature="e#23190#23352#0" expanded="false" />
-                <element signature="e#23210#23216#0" expanded="false" />
-                <element signature="e#23341#23342#0" expanded="false" />
-                <element signature="e#23786#24019#0" expanded="false" />
-                <element signature="e#24000#24001#0" expanded="false" />
-                <element signature="e#36309#36939#0" expanded="false" />
-                <element signature="e#36916#36917#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Excelerator.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/softwareSpecs/Excelerator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-7.5786715">
+            <state line="110" column="101" selection-start="3127" selection-end="3127" vertical-scroll-proportion="-9.075175">
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3725#3733#0" expanded="true" />
-                <element signature="e#3790#3798#0" expanded="true" />
-                <element signature="e#3854#3862#0" expanded="true" />
-                <element signature="e#3918#3926#0" expanded="true" />
-                <element signature="e#3989#4008#0" expanded="true" />
-                <element signature="e#4792#4800#0" expanded="true" />
-                <element signature="e#5323#5350#0" expanded="true" />
-                <element signature="e#5502#5510#0" expanded="true" />
-                <element signature="e#6302#6310#0" expanded="true" />
+                <element signature="e#4964#4972#0" expanded="true" />
+                <element signature="e#5029#5037#0" expanded="true" />
+                <element signature="e#5093#5101#0" expanded="true" />
+                <element signature="e#5157#5165#0" expanded="true" />
+                <element signature="e#5228#5247#0" expanded="true" />
+                <element signature="e#6031#6039#0" expanded="true" />
+                <element signature="e#6777#6804#0" expanded="true" />
+                <element signature="e#6894#6921#0" expanded="true" />
+                <element signature="e#7119#7127#0" expanded="true" />
+                <element signature="e#7193#7201#0" expanded="true" />
+                <element signature="e#7993#8001#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LinkedHashMap.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.7.0_40/src.zip!/java/util/LinkedHashMap.java">
+      <file leaf-file-name="TestWriter.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/softwareSpecs/TestWriter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="146" column="13" selection-start="6537" selection-end="6569" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="53" column="61" selection-start="1618" selection-end="1618" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -158,7 +144,7 @@
       <file leaf-file-name="TestAnalyze.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/softwareSpecs/TestAnalyze.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="0" selection-start="580" selection-end="580" vertical-scroll-proportion="0.0">
+            <state line="12" column="4" selection-start="205" selection-end="1014" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -167,16 +153,7 @@
       <file leaf-file-name="TestExcelerator.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/softwareSpecs/TestExcelerator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="69" selection-start="233" selection-end="233" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GetProjectOrCreateNew.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/softwareSpecs/GetProjectOrCreateNew.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="50" selection-start="942" selection-end="942" vertical-scroll-proportion="0.0">
+            <state line="18" column="49" selection-start="432" selection-end="432" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -185,7 +162,7 @@
       <file leaf-file-name="processed.dat" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/processed.dat">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="125" column="4" selection-start="905" selection-end="905" vertical-scroll-proportion="0.0">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -213,7 +190,6 @@
         <option value="$PROJECT_DIR$/src/softwareSpecs/Graphs.java" />
         <option value="C:/Program Files/Java/jdk1.7.0_40/src.zip!/java/security/ProtectionDomain.java" />
         <option value="$PROJECT_DIR$/src/softwareSpecs/GetProjectOrCreateNew.java" />
-        <option value="$PROJECT_DIR$/src/softwareSpecs/TestExcelerator.java" />
         <option value="$PROJECT_DIR$/src/softwareSpecs/DataSettings.java" />
         <option value="$PROJECT_DIR$/src/softwareSpecs/Gui.java" />
         <option value="C:/Program Files/Java/jdk1.7.0_40/src.zip!/java/awt/EventQueue.java" />
@@ -221,6 +197,8 @@
         <option value="$PROJECT_DIR$/src/softwareSpecs/NewEventFrame.java" />
         <option value="$PROJECT_DIR$/src/softwareSpecs/TestAnalyze.java" />
         <option value="$PROJECT_DIR$/processed.dat" />
+        <option value="$PROJECT_DIR$/src/softwareSpecs/TestExcelerator.java" />
+        <option value="$PROJECT_DIR$/src/softwareSpecs/TestWriter.java" />
         <option value="$PROJECT_DIR$/src/softwareSpecs/Excelerator.java" />
       </list>
     </option>
@@ -289,24 +267,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SoftwareSpecs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SoftwareSpecs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="softwareSpecs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DataSettings.java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="PackagesPane" />
@@ -323,7 +283,7 @@
     <property name="dynamic.classpath" value="false" />
     <property name="MemberChooser.copyJavadoc" value="false" />
   </component>
-  <component name="RunManager" selected="Application.TestAnalyze">
+  <component name="RunManager" selected="Application.TestWriter">
     <configuration default="false" name="Gui" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="src.softwareSpecs.Gui" />
       <option name="VM_PARAMETERS" />
@@ -374,6 +334,28 @@
     </configuration>
     <configuration default="false" name="TestAnalyze" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="src.softwareSpecs.TestAnalyze" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="SoftwareSpecs" />
+      <envs />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="TestWriter" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="src.softwareSpecs.TestWriter" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -482,18 +464,20 @@
       <patterns />
       <method />
     </configuration>
-    <list size="4">
+    <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Application.Gui" />
       <item index="1" class="java.lang.String" itemvalue="Application.NewEventFrame" />
       <item index="2" class="java.lang.String" itemvalue="Application.TestExcelerator" />
       <item index="3" class="java.lang.String" itemvalue="Application.TestAnalyze" />
+      <item index="4" class="java.lang.String" itemvalue="Application.TestWriter" />
     </list>
     <recent_temporary>
-      <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="Application.TestAnalyze" />
-        <item index="1" class="java.lang.String" itemvalue="Application.Gui" />
-        <item index="2" class="java.lang.String" itemvalue="Application.TestExcelerator" />
-        <item index="3" class="java.lang.String" itemvalue="Application.NewEventFrame" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Application.TestWriter" />
+        <item index="1" class="java.lang.String" itemvalue="Application.TestExcelerator" />
+        <item index="2" class="java.lang.String" itemvalue="Application.TestAnalyze" />
+        <item index="3" class="java.lang.String" itemvalue="Application.Gui" />
+        <item index="4" class="java.lang.String" itemvalue="Application.NewEventFrame" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -534,7 +518,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -550,7 +534,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25026682" sideWeight="0.6937639" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3062361" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3062361" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -623,13 +607,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/softwareSpecs/Export.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="13" selection-start="207" selection-end="207" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.7.0_40/src.zip!/java/security/ProtectionDomain.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="75" column="0" selection-start="1965" selection-end="1965" vertical-scroll-proportion="0.33277312" />
@@ -659,13 +636,6 @@
     <entry file="file://$PROJECT_DIR$/src/softwareSpecs/DataSettings.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="66" column="65" selection-start="1848" selection-end="1848" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/softwareSpecs/TestExcelerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="69" selection-start="233" selection-end="233" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -722,34 +692,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/softwareSpecs/TestAnalyze.java">
+    <entry file="file://$PROJECT_DIR$/processed.dat">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="0" selection-start="580" selection-end="580" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/processed.dat">
+    <entry file="file://$PROJECT_DIR$/src/softwareSpecs/TestExcelerator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="125" column="4" selection-start="905" selection-end="905" vertical-scroll-proportion="0.0">
+        <state line="18" column="49" selection-start="432" selection-end="432" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/softwareSpecs/TestAnalyze.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="4" selection-start="205" selection-end="1014" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/softwareSpecs/TestWriter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="53" column="61" selection-start="1618" selection-end="1618" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/softwareSpecs/Excelerator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-7.5786715">
+        <state line="110" column="101" selection-start="3127" selection-end="3127" vertical-scroll-proportion="-9.075175">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3725#3733#0" expanded="true" />
-            <element signature="e#3790#3798#0" expanded="true" />
-            <element signature="e#3854#3862#0" expanded="true" />
-            <element signature="e#3918#3926#0" expanded="true" />
-            <element signature="e#3989#4008#0" expanded="true" />
-            <element signature="e#4792#4800#0" expanded="true" />
-            <element signature="e#5323#5350#0" expanded="true" />
-            <element signature="e#5502#5510#0" expanded="true" />
-            <element signature="e#6302#6310#0" expanded="true" />
+            <element signature="e#4964#4972#0" expanded="true" />
+            <element signature="e#5029#5037#0" expanded="true" />
+            <element signature="e#5093#5101#0" expanded="true" />
+            <element signature="e#5157#5165#0" expanded="true" />
+            <element signature="e#5228#5247#0" expanded="true" />
+            <element signature="e#6031#6039#0" expanded="true" />
+            <element signature="e#6777#6804#0" expanded="true" />
+            <element signature="e#6894#6921#0" expanded="true" />
+            <element signature="e#7119#7127#0" expanded="true" />
+            <element signature="e#7193#7201#0" expanded="true" />
+            <element signature="e#7993#8001#0" expanded="true" />
           </folding>
         </state>
       </provider>

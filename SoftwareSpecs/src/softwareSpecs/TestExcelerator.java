@@ -16,7 +16,7 @@ public class TestExcelerator {
 
         try {
             Excelerator excelerator = new Excelerator();
-            excelerator.setInputFile("/Users/austinnafziger/Software/SoftwareSpecs/Corridor_Report.xls");
+            excelerator.setInputFile("C:\\Users\\Gabriel\\Documents\\Incognito\\SoftwareSpecs\\Corridor_Report.xls");
             excelerator.Read();
 
             Set a = excelerator.data.keySet();

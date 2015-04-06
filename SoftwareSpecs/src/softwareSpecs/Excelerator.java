@@ -2,19 +2,23 @@ package src.softwareSpecs;
 
 import java.io.*;
 import java.lang.reflect.Array;
+import java.text.FieldPosition;
+import java.text.ParsePosition;
 import java.util.*;
 
 import jxl.Cell;
 
 import jxl.Sheet;
 import jxl.Workbook;
+import jxl.format.Alignment;
 import jxl.read.biff.BiffException;
+import jxl.write.*;
 
 /**
  * Created by Austin Nafziger on 3/11/15.
  */
 public class Excelerator {
-    ArrayList<Double> distance;
+    LinkedHashMap<String, Double> distance;
 
     //used to read into program
     LinkedHashMap<String, HashMap<String, double[]>> data; // <date, <route name,
@@ -24,6 +28,9 @@ public class Excelerator {
     //built from analyzing data
     LinkedHashMap<String, LinkedHashMap<String, ArrayList<Double>>> avgTravelTimes;  //<EventName, <routeName, Travel Times>>
 
+    //built from analyzing data
+    LinkedHashMap<String, LinkedHashMap<String, ArrayList<Double>>> avgSpeed;  //<EventName, <routeName, speeds>>
+
 	private String inputFile;
 
 	public void setInputFile(String input) {
@@ -32,12 +39,20 @@ public class Excelerator {
 	}
 
 
-
+    /**
+     * Reads from a corridor_report.xls file.
+     * builds raw data into inverted index
+     *
+     * occurs when user clicks submit in the data settings panel
+     *
+     * @throws IOException
+     */
     public void Read() throws IOException{
 
 
         //initialize maps
 
+        distance = new LinkedHashMap<String, Double>();
         data = new LinkedHashMap<String, HashMap<String, double[]>>();
 
 
@@ -64,7 +79,7 @@ public class Excelerator {
 
                     //get route and distance
                     Cell route = sheet.getCell(j,13);
-                    Cell distanceLocal = sheet.getCell(j,14);
+
 
 //                    distance[j-3] = Double.parseDouble(distanceLocal.getContents());
 
@@ -89,43 +104,57 @@ public class Excelerator {
                     avgTravelTimes.put(route.getContents(), routeTime);
                 }
 
+                //build raw data table
                 data.put(date.getContents(), avgTravelTimes);
             }
+
+            //build table of distances
+            Sheet sheet = w.getSheet(0);
+
+            //for each route
+            for (int j = 3; j < sheet.getColumns(); j++) {
+
+                Cell routeName = sheet.getCell(j,13);
+                Cell distanceLocal = sheet.getCell(j,14);
+
+                //add to distance table
+                distance.put(routeName.getContents(), Double.parseDouble(distanceLocal.getContents()));
+
+
+            }//end for each route
+
+            w.close();
+
+
+
         } catch (BiffException e) {
             e.printStackTrace();
         }
 
-    }
+    }  //end read
 
-    public void Write(){
-
-
-    }
-
+    /**
+     *  Analysis of data
+     *  Will create averages of route travel times and speeds and store on inverted indecies.
+     *
+     *  Anaysis according to DataSettings File
+     *
+     * occurs when user hits submit in data settings panel
+     * after software reads from .xls file
+     *
+     * @param dataSettings
+     * @throws IOException
+     */
     public void Analyze(String dataSettings) throws IOException{
 
-        //analyze will build this HashMap
+        //analyze will build these HashMaps
         avgTravelTimes = new LinkedHashMap<String, LinkedHashMap<String, ArrayList<Double>>>();
+        avgSpeed = new LinkedHashMap<String, LinkedHashMap<String, ArrayList<Double>>>();
 
         File file = new File("processed.dat");
         PrintWriter writer = new PrintWriter(file);
 
-        /*
-        0:00 = 0
-        1:00 = 1
-        2:00 = 2
-        3:00 = 3
-        4:00 = 4
-        5:00 = 5
-        6:00 = 6
-        7:00 = 7
-        8:00 = 8
-        9:00 = 9
-        10:00 = 10
-        11:00 = 11
-        12:00 = 12
-         */
-
+        //Anayize parameters taken from data settings
         Scanner scan = new Scanner(new File(dataSettings));
         scan.useDelimiter("\r\n");
         String startDate = scan.next();
@@ -181,7 +210,11 @@ public class Excelerator {
             }
 
             events.add(temp);
-        }
+        }   //end setting up parameters
+
+        /********************************
+         *       begin analysis
+         ********************************/
 
         //build set of dates
         Set a = data.keySet();
@@ -194,12 +227,16 @@ public class Excelerator {
         //for each event type
         for(int w = 0; w < events.size()+1; w++){
 
+            //temporary hashmaps to build instance variables later
             LinkedHashMap<String,ArrayList<Double>> avgRoutes = new LinkedHashMap<String, ArrayList<Double>>();
+            LinkedHashMap<String, ArrayList<Double>> avgRouteSpeed = new LinkedHashMap<String, ArrayList<Double>>();
+
             //for each route
             for(int i = 0; i < routesKey.length; i++){
 
-
+                //temp ArrayList for Hashmaps
                 ArrayList<Double> avgRouteData = new ArrayList<Double>();
+                ArrayList<Double> avgSpeedData = new ArrayList<Double>();
 
                 try{
 
@@ -255,7 +292,11 @@ public class Excelerator {
                         }//end for each date
 
                         //add data to arraylist
-                        avgRouteData.add(takeAvg(nonEventTravelTimes));
+                        double avg = takeAvg(nonEventTravelTimes);
+                        avgRouteData.add(avg);
+
+                        //speed = d/t
+                        avgSpeedData.add(distance.get(routesKey[i])/avg);
 
                         //write to process.dat to store data for future referance
                         String average = String.format("%.3f",takeAvg(nonEventTravelTimes));
@@ -264,7 +305,7 @@ public class Excelerator {
                     }//end for cells
 
                     avgRoutes.put((String)routesKey[i],avgRouteData);
-
+                    avgRouteSpeed.put((String)routesKey[i], avgSpeedData);
 
                 }//end if selected routes
             }catch(NullPointerException n){
@@ -274,9 +315,13 @@ public class Excelerator {
 
             }// end for all routes
             if(w==0){
+                //build hashmap if non event day
                 avgTravelTimes.put("Non-Event", avgRoutes);
+                avgSpeed.put("Non-Event",avgRouteSpeed);
             }else{
+                //build haspmap if event day
                 avgTravelTimes.put(events.get(w-1).get(0), avgRoutes);
+                avgSpeed.put(events.get(w-1).get(0),avgRouteSpeed);
             }
 
 
@@ -285,41 +330,80 @@ public class Excelerator {
 
         writer.close();
 
-
-        /*
-        System.out.println(startDate);
-        System.out.println(endDate);
-        System.out.println(startTime);
-        System.out.println(endTime);
-        System.out.println(north);
-        System.out.println(south);
-        System.out.println(east);
-        System.out.println(west);
-        for(String data: northRoutes){
-
-            System.out.println(data);
-        }
-        for(String data: southRoutes){
-
-            System.out.println(data);
-        }
-        for(String data: eastRoutes){
-
-            System.out.println(data);
-        }
-        for(String data: westRoutes){
-
-            System.out.println(data);
-        }
-        for(ArrayList<String> list: events){
-
-            for(String data: list){
-
-                System.out.println(data);
-            }
-        }*/
-
     }
+
+
+    /**
+     * Writes to filename.xls. Transferring all process data according to user settings
+     * into a new excel file.
+     *
+     * Occurs when user wishes to export file
+     *
+     * @param filename
+     */
+    public void Write(String filename) throws IOException, WriteException {
+
+        //todo finish this method
+
+        //create writable workbook
+        File excelFile = new File(filename + ".xls");
+        WritableWorkbook  workbook = Workbook.createWorkbook(excelFile);
+
+        //create writable sheet
+        WritableSheet sheet = workbook.createSheet("Data Summary" , 0);
+
+        //create formats
+        NumberFormat threeDps = new NumberFormat("#.###"); //three decimal points
+        WritableCellFormat cellFormat = new WritableCellFormat();
+        cellFormat.setAlignment(Alignment.CENTRE); //center alignment format
+
+
+        /**
+         * create tables of average times
+         */
+
+
+        //Create array of keys
+        Set a = avgTravelTimes.keySet();
+        Object[] eventKeys = a.toArray();   //array of events
+
+        Set c = avgTravelTimes.get(eventKeys[0]).keySet();
+        Object[] routeKeys = c.toArray(); //array of routes
+
+        //create sheet titles
+        //todo
+
+        //for each eventType
+        for(int i = 0; i< eventKeys.length;i++){
+
+            //mergeCells for title
+            sheet.mergeCells(0, 5 + i * avgTravelTimes.get(eventKeys[0]).get(routeKeys[0]).size(),
+                    routeKeys.length + 1, 5 + i * avgTravelTimes.get(eventKeys[0]).get(routeKeys[0]).size());
+
+            //create title and add to cell
+            Label titleLabel = new Label(1,5 + i * avgTravelTimes.get(eventKeys[0]).get(routeKeys[0]).size()
+                    , eventKeys[i] + " Average Route Travel Time (minutes) ",cellFormat);
+            sheet.addCell(titleLabel);
+
+            //for each selected route
+            for(int j = 0; j < routeKeys.length;j++){
+
+                //create route title and add to cell
+                Label routeLabel = new Label(j+1,6,(String)routeKeys[j],cellFormat);
+                sheet.addCell(routeLabel);
+
+
+
+            }//end for all routes
+
+        }//end for each event
+
+        //write file and then close
+        workbook.write();
+        workbook.close();
+
+    } //end write
+
 
     /**
      * takes average of an array list of doubles.
