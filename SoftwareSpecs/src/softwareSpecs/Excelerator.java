@@ -10,9 +10,14 @@ import jxl.Cell;
 
 import jxl.Sheet;
 import jxl.Workbook;
+import jxl.format.*;
 import jxl.format.Alignment;
+import jxl.format.Border;
+import jxl.format.BorderLineStyle;
+import jxl.format.Colour;
 import jxl.read.biff.BiffException;
 import jxl.write.*;
+
 
 /**
  * Created by Austin Nafziger on 3/11/15.
@@ -32,6 +37,9 @@ public class Excelerator {
     LinkedHashMap<String, LinkedHashMap<String, ArrayList<Double>>> avgSpeed;  //<EventName, <routeName, speeds>>
 
 	private String inputFile;
+    int startTime;
+    int endTime;
+
 
 	public void setInputFile(String input) {
 
@@ -70,7 +78,7 @@ public class Excelerator {
 
                 //get date
                 Cell date = sheet.getCell(1,7);
-                System.out.println(date.getContents());
+                //System.out.println(date.getContents());
 
                 for (int j = 3; j < sheet.getColumns(); j++) {
 
@@ -159,8 +167,8 @@ public class Excelerator {
         scan.useDelimiter("\r\n");
         String startDate = scan.next();
         String endDate = scan.next();
-        int startTime = Integer.parseInt(scan.next());
-        int endTime = Integer.parseInt(scan.next());
+        startTime = Integer.parseInt(scan.next());
+        endTime = Integer.parseInt(scan.next());
         String north = scan.next();
         String south = scan.next();
         String east = scan.next();
@@ -244,7 +252,7 @@ public class Excelerator {
                 if((northRoutes.contains(routesKey[i]) && north.equals("true"))||(southRoutes.contains(routesKey[i])&& south.equals("true"))
                         ||(eastRoutes.contains(routesKey[i])&&east.equals("true"))||(westRoutes.contains(routesKey[i])&& west.equals("true"))){
 
-                    System.out.println("route: " + routesKey[i]);
+                    //System.out.println("route: " + routesKey[i]);
                     writer.println("route: " + routesKey[i]);
 
 
@@ -354,8 +362,18 @@ public class Excelerator {
 
         //create formats
         NumberFormat threeDps = new NumberFormat("#.###"); //three decimal points
+
+        //title format
         WritableCellFormat cellFormat = new WritableCellFormat();
         cellFormat.setAlignment(Alignment.CENTRE); //center alignment format
+        cellFormat.setBackground(Colour.YELLOW2);
+
+        //main title format
+        WritableFont mainTitleFont = new WritableFont(WritableFont.ARIAL, 18, WritableFont.BOLD, true);//set font
+        WritableCellFormat titleFormat = new WritableCellFormat(mainTitleFont);
+        titleFormat.setBackground(Colour.RED);
+        titleFormat.setAlignment(Alignment.CENTRE);
+
 
 
         /**
@@ -371,28 +389,46 @@ public class Excelerator {
         Object[] routeKeys = c.toArray(); //array of routes
 
         //create sheet titles
-        //todo
+        sheet.mergeCells(0,0,routeKeys.length,1);
+        Label travelTimeLabel = new Label(0,0,"Average Route Travel Times",titleFormat);
+        sheet.addCell(travelTimeLabel);
+
 
         //for each eventType
         for(int i = 0; i< eventKeys.length;i++){
 
+
+
+
             //mergeCells for title
-            sheet.mergeCells(0, 5 + i * avgTravelTimes.get(eventKeys[0]).get(routeKeys[0]).size(),
-                    routeKeys.length + 1, 5 + i * avgTravelTimes.get(eventKeys[0]).get(routeKeys[0]).size());
+            sheet.mergeCells(0, 4 + i * avgTravelTimes.get(eventKeys[0]).get(routeKeys[0]).size(),
+                    routeKeys.length , 4 + i * avgTravelTimes.get(eventKeys[0]).get(routeKeys[0]).size());
 
             //create title and add to cell
-            Label titleLabel = new Label(1,5 + i * avgTravelTimes.get(eventKeys[0]).get(routeKeys[0]).size()
+
+            Label titleLabel = new Label(0,4 + i * avgTravelTimes.get(eventKeys[0]).get(routeKeys[0]).size()
                     , eventKeys[i] + " Average Route Travel Time (minutes) ",cellFormat);
             sheet.addCell(titleLabel);
 
             //for each selected route
             for(int j = 0; j < routeKeys.length;j++){
 
+                sheet.setColumnView(j+1,20);
+
                 //create route title and add to cell
-                Label routeLabel = new Label(j+1,6,(String)routeKeys[j],cellFormat);
+                Label routeLabel = new Label(j+1,5 + i*avgTravelTimes.get(eventKeys[0]).get(routeKeys[0]).size()
+                        ,(String)routeKeys[j]);
                 sheet.addCell(routeLabel);
 
+                //for each cell
+                for(int k = 0; k < avgTravelTimes.get(eventKeys[0]).get(routeKeys[0]).size(); k++){
 
+                    //
+
+
+
+
+                }//end for each cell
 
             }//end for all routes
 
