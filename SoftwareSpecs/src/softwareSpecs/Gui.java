@@ -123,7 +123,7 @@ public class Gui extends JFrame {
 
 		panel3.setSize(700, 500);
 		panel3.setVisible(true);
-		panel3.add(new Graphs());
+		//panel3.add(new Graphs());
 		// end panel 3
 
 		wrapper.add(tabbedPane);

@@ -164,7 +164,7 @@ public class Excelerator {
 
         //Anayize parameters taken from data settings
         Scanner scan = new Scanner(new File(dataSettings));
-        scan.useDelimiter("\r\n");
+        scan.useDelimiter("\n");
         String startDate = scan.next();
         String endDate = scan.next();
         startTime = Integer.parseInt(scan.next());
