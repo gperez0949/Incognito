@@ -26,6 +26,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.geom.AffineTransform;
+import java.awt.geom.Arc2D;
 import java.awt.geom.Rectangle2D;
 import java.awt.geom.RectangularShape;
 import java.awt.image.ColorModel;
@@ -44,16 +45,59 @@ public class Graphs extends JPanel{
     private static double maximum = 0;
     private static Color barCol = Color.BLUE;
     ChartPanel panel;
+    JPanel north;
+    JComboBox<String> events;
+    JComboBox<String> routes;
+    JButton update;
+    JButton color ;
+    DefaultCategoryDataset dataset = new DefaultCategoryDataset();;
+    double[] difference;
+    int dataCount;
+    Object[] eventKeys;
+
+    Excelerator excelerator;
 
 	public Graphs(String chartTitle) throws IOException {
 
-        panel = update(chartTitle);
 
-        JPanel north = new JPanel();
-        JComboBox<String> events = new JComboBox<String>();
-        JComboBox<String> routes = new JComboBox<String>();
-        final JButton update = new JButton("Update");
-        JButton color = new JButton("Choose Color");
+
+        north = new JPanel();
+        events = new JComboBox<String>();
+        routes = new JComboBox<String>();
+        update = new JButton("Update");
+        color = new JButton("Choose Color");
+
+        excelerator = new Excelerator();
+        excelerator.setInputFile("/Users/austinnafziger/Software/SoftwareSpecs/Corridor_Report.xls");
+        excelerator.Read();
+        excelerator.Analyze("/Users/austinnafziger/Software/SoftwareSpecs/settings.dat");
+
+
+
+        Set a = excelerator.avgTravelTimes.keySet();
+        eventKeys = a.toArray();
+
+        Set b = excelerator.avgTravelTimes.get(eventKeys[0]).keySet();
+        Object[] routeKeys = b.toArray();
+
+        for(int i =1; i<eventKeys.length ; i++){
+
+            events.addItem((String)eventKeys[i]);
+        }
+
+        for(int i =0; i<routeKeys.length ; i++){
+
+            routes.addItem((String)routeKeys[i]);
+        }
+
+        dataCount = excelerator.avgTravelTimes.get(eventKeys[0]).get(routeKeys[0]).size();
+        difference = new double[dataCount];
+
+        createDataSet();
+
+
+
+        panel = update(chartTitle);
 
         color.addActionListener(new ActionListener() {
             @Override
@@ -83,10 +127,18 @@ public class Graphs extends JPanel{
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                    panel.getChart().setTitle("hello");
-                    panel.getChart().getCategoryPlot().getRenderer().setSeriesPaint(0, barCol);
+                panel.getChart().setTitle((String)routes.getSelectedItem());
+                panel.getChart().getCategoryPlot().getRenderer().setSeriesPaint(0, barCol);
+                try {
+                    createDataSet();
+                } catch (IOException e1) {
+                    e1.printStackTrace();
+                }
+
             }
         });
+
+
 
         north.add(events);
         north.add(routes);
@@ -108,7 +160,7 @@ public class Graphs extends JPanel{
         JFreeChart barchart = ChartFactory.createBarChart(chartTitle,
                 "Time Interval",
                 "Percent Change",
-                createDataSet(),
+                dataset,
                 PlotOrientation.VERTICAL,
                 false, true, false);
 
@@ -125,7 +177,7 @@ public class Graphs extends JPanel{
         SymbolAxis rangeAxis = new SymbolAxis("", scale);
         rangeAxis.setTickUnit(new NumberTickUnit(25));
         rangeAxis.setAutoRange(false);
-        rangeAxis.setRange(0, maximum);
+        rangeAxis.setRange(0, Math.abs(maximum));
         plot.setRangeAxis(rangeAxis);
 
         renderer.setBarPainter(new StandardBarPainter());
@@ -139,67 +191,40 @@ public class Graphs extends JPanel{
         panel.setBounds(0, 50, 900, 650);
 
         panel.setVisible(true);
-        
+
         return panel;
     }
 
-    private CategoryDataset createDataSet() throws IOException {
+    private void createDataSet() throws IOException {
 
-        Excelerator excelerator = new Excelerator();
-        excelerator.setInputFile("/Users/austinnafziger/Software/SoftwareSpecs/Corridor_Report.xls");
-        excelerator.Read();
-        excelerator.Analyze("/Users/austinnafziger/Software/SoftwareSpecs/settings.dat");
+        for(int i = 0 ; i < dataCount; i++){
+
+            difference[i] = 100*(excelerator.avgTravelTimes.get(events.getSelectedItem()).get(routes.getSelectedItem()).get(i) -
+                    excelerator.avgTravelTimes.get(eventKeys[0]).get(routes.getSelectedItem()).get(i))
+                    /excelerator.avgTravelTimes.get(eventKeys[0]).get(routes.getSelectedItem()).get(i);
 
 
-        int start = excelerator.startTime;
-        int end = excelerator.endTime;
-
-        double[][] data = createTable(start, end);
-
-        DefaultCategoryDataset dataset = new DefaultCategoryDataset();
-
-        for (int i = 0; i < end - start+1; i++) {
-
-            for(int j=0; j<4; j++){
-
-                dataset.addValue(data[i][j], "0", Double.toString(data[i][0]));
-
-            }
         }
 
-        return dataset;
-    }
 
-    private double[][] createTable(int s, int e){
+        dataset.clear();
 
-        double[][] temp = new double[e-s+1][4];
+            for (int i = 0; i<difference.length-1; i++) {
 
-        for(int i = 0; i<e-s+1; i++){
+                if(Double.isNaN(difference[i])){
 
-            for(int j =0; j<4; j++){
+                    continue;
+                }
 
-                if(j==0){
+                dataset.addValue((Number)difference[i], 0, i);
 
-                    temp[i][j] = i+s;
 
-                }else if(j==3){
+                if (difference[i] > maximum) {
 
-                    temp[i][j] = (temp[i][1] - temp[i][2])/temp[i][2] * 100 + 70;
-                    //System.out.println(temp[i][j]);
-
-                    if(temp[i][j] > maximum){
-
-                       // System.out.println("Max changed");
-                        maximum = temp[i][j];
-                    }
-
-                }else{
-
-                        temp[i][j]= 20+j;
+                    maximum = difference[i];
                 }
             }
-        }
 
-        return temp;
     }
+
 }
