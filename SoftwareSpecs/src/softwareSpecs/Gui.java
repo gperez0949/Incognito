@@ -18,6 +18,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.border.EmptyBorder;
+import org.eclipse.wb.swing.FocusTraversalOnArray;
+import java.awt.Component;
 
 public class Gui extends JFrame {
 	private File selectedFile;
@@ -38,8 +40,7 @@ public class Gui extends JFrame {
 		dates = new String[5];
 		times = new String[5];
 
-		this.setSize(720, 580);// set size
-		this.setResizable(true);// can resize
+		this.setSize(698, 545);
 		this.getContentPane().setBackground(Color.decode("#001F48"));// FGCU//
 																		// Blue
 
@@ -49,10 +50,10 @@ public class Gui extends JFrame {
 				/ 2 - this.getSize().height / 2);
 		this.setTitle("DynamicStat");
 
-		JPanel wrapper = new JPanel();
-		wrapper.setLayout(new BorderLayout());
-		wrapper.setBackground(Color.decode("#001F48"));
-		wrapper.setBorder(new EmptyBorder(10, 10, 10, 10));
+//		JPanel wrapper = new JPanel();
+//		wrapper.setLayout(new BorderLayout());
+//		wrapper.setBackground(Color.decode("#001F48"));
+//		wrapper.setBorder(new EmptyBorder(10, 10, 10, 10));
 
 		/*
 		 * @setMnemonicAt by pressing alt and some number allows use to navigate
@@ -62,18 +63,19 @@ public class Gui extends JFrame {
 
 		final JTabbedPane tabbedPane = new JTabbedPane();
 		tabbedPane.setBackground(Color.decode("#014D33"));// FGCU Green
-
+		tabbedPane.setLayout(null);
+		tabbedPane.setSize(750,550);
 		/*
 		 * @setMnemonicAt by pressing alt and some number allows use to navigate
 		 * the tabs
 		 */
 		final GetProjectOrCreateNew panel1 = new GetProjectOrCreateNew();
+		panel1.goBtn.setBounds(87, 202, 520, 201);
 		tabbedPane.addTab("<html><H3 color=\"#00b2b2\">Open File</H3></html>",
 				panel1);
 		tabbedPane.setMnemonicAt(0, KeyEvent.VK_1);
 		panel1.setSize(700, 500);
 		panel1.setVisible(true);
-		panel1.setLayout(null);
 		// end panel 1
 
 		// start panel 2
@@ -123,11 +125,13 @@ public class Gui extends JFrame {
 
 		panel3.setSize(700, 500);
 		panel3.setVisible(true);
-		panel3.add(new Graphs());
+		Graphs graphs = new Graphs();
+		panel3.add(graphs);
 		// end panel 3
 
-		wrapper.add(tabbedPane);
-		this.add(wrapper);
+		//wrapper.add(tabbedPane);
+		getContentPane().add(tabbedPane);
+		getContentPane().add(tabbedPane);
 		this.show();
 		// start panel 4
 		
@@ -189,6 +193,8 @@ public class Gui extends JFrame {
 				createNewButtonActionPerformed(e);
 			}
 		});
+		panel1.setLayout(null);
+		setFocusTraversalPolicy(new FocusTraversalOnArray(new Component[]{getContentPane(), tabbedPane, panel1, panel1.goBtn, panel2, panel3, graphs, panel4, export}));
 
 	}// end Gui
 
@@ -220,5 +226,4 @@ public class Gui extends JFrame {
 	public static void main(String[] args) throws FileNotFoundException {
 		new Gui();
 	}// end main
-
 }// end Gui
