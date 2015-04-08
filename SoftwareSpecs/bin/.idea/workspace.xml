@@ -9,7 +9,7 @@
     <file path="/Gui.java" changelist="70b8b1ff-a55f-4710-ab04-0db9dcc6a30f" time="1426096736321" ignored="false" />
     <file path="/GetProjectOrCreateNew.java" changelist="70b8b1ff-a55f-4710-ab04-0db9dcc6a30f" time="1426088086012" ignored="false" />
     <file path="/fragment.java" changelist="70b8b1ff-a55f-4710-ab04-0db9dcc6a30f" time="1426087821384" ignored="false" />
-    <file path="/Excelerator.java" changelist="70b8b1ff-a55f-4710-ab04-0db9dcc6a30f" time="1428345012144" ignored="false" />
+    <file path="/Excelerator.java" changelist="70b8b1ff-a55f-4710-ab04-0db9dcc6a30f" time="1428349852794" ignored="false" />
     <file path="/TestExcelerator.java" changelist="70b8b1ff-a55f-4710-ab04-0db9dcc6a30f" time="1426093867309" ignored="false" />
     <file path="/TestAnalyze.java" changelist="70b8b1ff-a55f-4710-ab04-0db9dcc6a30f" time="1427831768631" ignored="false" />
     <file path="/TestWriter.java" changelist="70b8b1ff-a55f-4710-ab04-0db9dcc6a30f" time="1428344723268" ignored="false" />
@@ -102,20 +102,20 @@
       <file leaf-file-name="Excelerator.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/softwareSpecs/Excelerator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="110" column="101" selection-start="3127" selection-end="3127" vertical-scroll-proportion="-9.075175">
+            <state line="170" column="8" selection-start="4868" selection-end="4868" vertical-scroll-proportion="0.4160839">
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#4964#4972#0" expanded="true" />
-                <element signature="e#5029#5037#0" expanded="true" />
-                <element signature="e#5093#5101#0" expanded="true" />
-                <element signature="e#5157#5165#0" expanded="true" />
-                <element signature="e#5228#5247#0" expanded="true" />
-                <element signature="e#6031#6039#0" expanded="true" />
-                <element signature="e#6777#6804#0" expanded="true" />
-                <element signature="e#6894#6921#0" expanded="true" />
-                <element signature="e#7119#7127#0" expanded="true" />
-                <element signature="e#7193#7201#0" expanded="true" />
-                <element signature="e#7993#8001#0" expanded="true" />
+                <element signature="e#5104#5112#0" expanded="true" />
+                <element signature="e#5169#5177#0" expanded="true" />
+                <element signature="e#5233#5241#0" expanded="true" />
+                <element signature="e#5297#5305#0" expanded="true" />
+                <element signature="e#5368#5387#0" expanded="true" />
+                <element signature="e#6171#6179#0" expanded="true" />
+                <element signature="e#6917#6944#0" expanded="true" />
+                <element signature="e#7034#7061#0" expanded="true" />
+                <element signature="e#7259#7267#0" expanded="true" />
+                <element signature="e#7333#7341#0" expanded="true" />
+                <element signature="e#8135#8143#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -135,7 +135,7 @@
       <file leaf-file-name="settings.dat" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/settings.dat">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="14" selection-start="224" selection-end="224" vertical-scroll-proportion="0.0">
+            <state line="10" column="21" selection-start="108" selection-end="108" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -518,14 +518,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3997773" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3062361" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850778" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -534,7 +534,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25026682" sideWeight="0.6937639" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3062361" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3062361" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -661,13 +661,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/settings.dat">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="14" selection-start="224" selection-end="224" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.7.0_40/src.zip!/java/awt/EventQueue.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="102" column="0" selection-start="2896" selection-end="2896" vertical-scroll-proportion="0.0">
@@ -722,22 +715,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/settings.dat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="21" selection-start="108" selection-end="108" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/softwareSpecs/Excelerator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="110" column="101" selection-start="3127" selection-end="3127" vertical-scroll-proportion="-9.075175">
+        <state line="170" column="8" selection-start="4868" selection-end="4868" vertical-scroll-proportion="0.4160839">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4964#4972#0" expanded="true" />
-            <element signature="e#5029#5037#0" expanded="true" />
-            <element signature="e#5093#5101#0" expanded="true" />
-            <element signature="e#5157#5165#0" expanded="true" />
-            <element signature="e#5228#5247#0" expanded="true" />
-            <element signature="e#6031#6039#0" expanded="true" />
-            <element signature="e#6777#6804#0" expanded="true" />
-            <element signature="e#6894#6921#0" expanded="true" />
-            <element signature="e#7119#7127#0" expanded="true" />
-            <element signature="e#7193#7201#0" expanded="true" />
-            <element signature="e#7993#8001#0" expanded="true" />
+            <element signature="e#5104#5112#0" expanded="true" />
+            <element signature="e#5169#5177#0" expanded="true" />
+            <element signature="e#5233#5241#0" expanded="true" />
+            <element signature="e#5297#5305#0" expanded="true" />
+            <element signature="e#5368#5387#0" expanded="true" />
+            <element signature="e#6171#6179#0" expanded="true" />
+            <element signature="e#6917#6944#0" expanded="true" />
+            <element signature="e#7034#7061#0" expanded="true" />
+            <element signature="e#7259#7267#0" expanded="true" />
+            <element signature="e#7333#7341#0" expanded="true" />
+            <element signature="e#8135#8143#0" expanded="true" />
           </folding>
         </state>
       </provider>
