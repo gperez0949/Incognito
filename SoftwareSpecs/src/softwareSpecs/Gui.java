@@ -11,6 +11,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.HashMap;
 
 import javax.swing.JComponent;
@@ -18,7 +19,9 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.border.EmptyBorder;
+
 import org.eclipse.wb.swing.FocusTraversalOnArray;
+
 import java.awt.Component;
 
 public class Gui extends JFrame {
@@ -125,8 +128,19 @@ public class Gui extends JFrame {
 
 		panel3.setSize(700, 500);
 		panel3.setVisible(true);
-		Graphs graphs = new Graphs();
-		panel3.add(graphs);
+
+		Graphs graphs = null;
+		try {
+			graphs = new Graphs("The graphs");
+			panel3.add(graphs);
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
+
+		//panel3.add(new Graphs());
+
 		// end panel 3
 
 		//wrapper.add(tabbedPane);

@@ -20,7 +20,7 @@ public class DataReader {
         // "C:/Users/Gabriel/Incognito/SoftwareSpecs/processed.dat"));
 
         BufferedReader br = new BufferedReader(new
-                FileReader("/Users/austinnafziger/Software/SoftwareSpecs/processed.dat"));
+                FileReader("C:\\Users\\Gabriel\\Documents\\Incognito\\SoftwareSpecs\\processed.dat"));
 
 
 //        BufferedReader br = new BufferedReader(new FileReader("processed.dat"));

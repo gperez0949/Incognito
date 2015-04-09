@@ -10,6 +10,7 @@ import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+import java.io.IOException;
 import java.net.URI;
 
 import javax.swing.DefaultComboBoxModel;
@@ -26,6 +27,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.JCheckBox;
 import javax.swing.JList;
+
 import java.awt.Button;
 
 public class NewGui extends JFrame {
@@ -444,6 +446,16 @@ public class NewGui extends JFrame {
 		panel_2.setBackground(Color.decode("#163259"));
 		tabbedPane.addTab("<html><H1 color=\"#EBEBEB\">Graphs</H3></html>",
 				null, panel_2, null);
+		try {
+			panel_2.setLayout(null);
+			Graphs graphs = new Graphs("Graphs");
+			graphs.setBounds(10, 11, 1252, 449);
+			panel_2.add(graphs);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		panel_2.setSize(700, 500);
 		tabbedPane.setEnabledAt(2, false);
 		tabbedPane.setForegroundAt(2, new Color(30, 144, 255));
 
