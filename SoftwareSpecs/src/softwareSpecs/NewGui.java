@@ -1,5 +1,6 @@
 package src.softwareSpecs;
 
+import java.awt.Button;
 import java.awt.Color;
 import java.awt.Desktop;
 import java.awt.Dimension;
@@ -15,25 +16,25 @@ import java.net.URI;
 
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
+import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
+import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
 import javax.swing.filechooser.FileNameExtensionFilter;
-import javax.swing.JCheckBox;
-import javax.swing.JList;
-
-import java.awt.Button;
 
 public class NewGui extends JFrame {
 
 	private JPanel contentPane;
 	private File selectedFile;
+	private JTextField txtNewEventName;
 
 	/**
 	 * Launch the application.
@@ -451,6 +452,84 @@ public class NewGui extends JFrame {
 		panel_1.add(btnRemoveEvent);
 
 		Button button_8 = new Button("New Event");
+		button_8.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				final JFrame newEvent = new JFrame();
+				newEvent.setVisible(true);
+				newEvent.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+				newEvent.setBounds(100, 100, 526, 379);
+				contentPane = new JPanel();
+				contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+				contentPane.setBackground(Color.decode("#014D33"));
+				newEvent.setContentPane(contentPane);
+				contentPane.setLayout(null);
+				
+				JLabel lblEventStartTme = new JLabel("Event Start Tme: ");
+				lblEventStartTme.setForeground(new Color(255, 255, 255));
+				lblEventStartTme.setFont(new Font("Tahoma", Font.BOLD, 14));
+				lblEventStartTme.setBounds(10, 11, 134, 42);
+				contentPane.add(lblEventStartTme);
+				
+				JComboBox comboBox = new JComboBox();
+				comboBox.setBounds(154, 18, 95, 32);
+				contentPane.add(comboBox);
+				
+				txtNewEventName = new JTextField();
+				txtNewEventName.setText("New Event Name");
+				txtNewEventName.setBounds(293, 18, 177, 20);
+				contentPane.add(txtNewEventName);
+				txtNewEventName.setColumns(10);
+				
+				JLabel lblAvailableDates = new JLabel("Available dates");
+				lblAvailableDates.setForeground(new Color(255, 255, 255));
+				lblAvailableDates.setFont(new Font("Tahoma", Font.BOLD, 14));
+				lblAvailableDates.setBounds(87, 78, 130, 14);
+				contentPane.add(lblAvailableDates);
+				
+				JLabel lblSelectedDate = new JLabel("Selected Date");
+				lblSelectedDate.setFont(new Font("Tahoma", Font.BOLD, 14));
+				lblSelectedDate.setForeground(new Color(255, 255, 255));
+				lblSelectedDate.setBounds(318, 78, 117, 14);
+				contentPane.add(lblSelectedDate);
+				
+				JList listOFAvailDates = new JList();
+				listOFAvailDates.setBounds(10, 115, 207, 169);
+				contentPane.add(listOFAvailDates);
+				
+				JButton btnNewButton = new JButton(">>");
+				btnNewButton.setBounds(223, 126, 67, 23);
+				contentPane.add(btnNewButton);
+				
+				JButton button = new JButton("<<");
+				button.setBounds(223, 235, 67, 23);
+				contentPane.add(button);
+				
+				JList listOfSelectedDates = new JList();
+				listOfSelectedDates.setBounds(293, 115, 207, 169);
+				contentPane.add(listOfSelectedDates);
+				
+				JButton btnSubmit = new JButton("Submit");
+				btnSubmit.setFont(new Font("Tahoma", Font.BOLD, 14));
+				btnSubmit.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						//capture info when this btn is clicked
+						
+					}
+				});
+				btnSubmit.setBounds(128, 306, 89, 23);
+				contentPane.add(btnSubmit);
+				
+				JButton btnCancel = new JButton("Cancel");
+				btnCancel.setFont(new Font("Tahoma", Font.BOLD, 14));
+				btnCancel.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+						newEvent.dispose();
+					}
+				});
+				btnCancel.setBounds(293, 306, 89, 23);
+				contentPane.add(btnCancel);
+			}
+		});
 		button_8.setFont(new Font("Dialog", Font.BOLD, 14));
 		button_8.setBounds((int)(1062*x), (int)(174*y), (int)(168*w), (int)(33*h));
 		panel_1.add(button_8);
