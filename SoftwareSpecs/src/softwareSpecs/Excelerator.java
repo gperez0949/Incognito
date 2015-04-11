@@ -58,6 +58,7 @@ public class Excelerator {
      */
     public void Read() throws IOException{
 
+        double startTime = System.nanoTime();
 
         //initialize maps
 
@@ -133,6 +134,10 @@ public class Excelerator {
             }//end for each route
 
             w.close();
+
+            //display statues
+            double endTime = System.nanoTime();
+            System.out.println("Excel read successful: " + (endTime -startTime) / 1000000000 + "s");
 
 
 

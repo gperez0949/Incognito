@@ -29,13 +29,34 @@ import javax.swing.JCheckBox;
 import javax.swing.JList;
 
 import java.awt.Button;
+import java.util.Set;
 
 public class NewGui extends JFrame {
 
+    private Excelerator excel = new Excelerator();
+
 	private JPanel contentPane;
 	private File selectedFile;
+    private double x;
+    private double y;
+    private double w;
+    private double h;
+    private JTabbedPane tabbedPane;
+    private JLabel lblFileSelected;
 
-	/**
+    private JComboBox startDateCombo;
+    private JComboBox endDateCombo;
+    private JComboBox startTimeCombo;
+    private JComboBox endTimeCombo;
+
+    private JComboBox cBoxNBound;
+    private JComboBox cBoxSBound;
+    private JComboBox cBoxEBound;
+    private JComboBox cBoxWBound;
+
+
+
+    /**
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
@@ -63,10 +84,10 @@ public class NewGui extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		// code found here http://www.eclipse.org/forums/index.php/t/236548/
 		final Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
-		final double x = screen.width / 1366;
-		final double y = (screen.height) / 768;
-		final double w = screen.width / 1366;
-		final double h = screen.height / 768;
+		x = screen.width / 1366.0;
+		y = screen.height / 768.0;
+		w = screen.width / 1366.0;
+		h = screen.height / 768.0;
 		setBounds(0, 0, screen.width, screen.height - 40);
 		setExtendedState(Frame.MAXIMIZED_BOTH);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -81,34 +102,9 @@ public class NewGui extends JFrame {
 		btnContactUs.setFont(new Font("Tahoma", Font.BOLD, 17));
 		btnContactUs.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				// To contact us a new JFrame will appear and display an email
-				// to which the user can send messages
-				JFrame alert = new JFrame();
-				alert.setTitle("How to Contact us");
-				alert.setResizable(false);
-				alert.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-				alert.setBounds((int)(100 * x),(int)( 100 * y),(int) (450 * w),(int)( 300 * h));
-				contentPane = new JPanel();
-				contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-				contentPane.setBackground(Color.decode("#014D33"));
-				alert.setContentPane(contentPane);
-				contentPane.setLayout(null);
 
-				JPanel panel = new JPanel();
-				panel.setBounds((int)(21 * x),(int)( 23 * y), (int)(402 * w),(int)( 224 * h));
-				panel.setBackground(Color.decode("#163259"));
-				contentPane.add(panel);
-				panel.setLayout(null);
+                btnContactUsActionPerformed();
 
-				JLabel lblNewLabel = new JLabel(
-						"Please Email jamesmpalmisano@gmail.com");
-				lblNewLabel.setForeground(new Color(255, 255, 255));
-				lblNewLabel.setFont(new Font("Times New Roman", Font.BOLD, 15));
-				lblNewLabel.setBounds((int)(59 * x),(int)( 59 * y), (int)(302 * w),(int)( 89 * h));
-				panel.add(lblNewLabel);
-
-				alert.setVisible(true);
-				alert.setDefaultCloseOperation(HIDE_ON_CLOSE);
 			}
 		});
 		btnContactUs.setBounds((int)(987 * x), (int)(622 * y),(int) (139 * w),(int)( 23 * h));
@@ -117,26 +113,16 @@ public class NewGui extends JFrame {
 		JButton btnDoOurSurvey = new JButton("Do our survey");
 		btnDoOurSurvey.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				// open default webbrowsser
-				// this code was found here
-				// http://stackoverflow.com/questions/10967451/open-a-link-in-browser-with-java-button
-				Desktop desktop = Desktop.isDesktopSupported() ? Desktop
-						.getDesktop() : null;
-				if (desktop != null
-						&& desktop.isSupported(Desktop.Action.BROWSE)) {
-					try {
-						desktop.browse(new URI("http://goo.gl/forms/m8OqtUwd8l"));
-					} catch (Exception e) {
-						e.printStackTrace();
-					}
-				}
+
+                btnDoOurSurveyActionPerformed();
+
 			}
 		});
 		btnDoOurSurvey.setFont(new Font("Tahoma", Font.BOLD, 17));
-		btnDoOurSurvey.setBounds(1136, 622, 178, 23);
+		btnDoOurSurvey.setBounds((int)(1136 * x), (int)(622 * y),(int)( 178* w) , (int)(23 * h));
 		contentPane.add(btnDoOurSurvey);
 
-		final JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
+		tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane.setBorder(null);
 		tabbedPane.setForeground(UIManager.getColor("textHighlight"));
 		tabbedPane.setBackground(UIManager.getColor("textHighlight"));
@@ -200,14 +186,9 @@ public class NewGui extends JFrame {
 		JButton btnSubmit = new JButton("Submit");
 		btnSubmit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if (selectedFile != null) {
-					// if a file is selected then do the next thing
-					tabbedPane.setEnabledAt(1, true);
-					tabbedPane
-							.setTitleAt(1,
-									"<html><H1 color=\"#163259\">Data Settings</H3></html>");
-					tabbedPane.setSelectedIndex(1);
-				}
+
+                btnSubmitActionPerformed();
+
 			}
 		});
 		btnSubmit.setForeground(new Color(0, 0, 0));
@@ -223,7 +204,7 @@ public class NewGui extends JFrame {
 		lblPleaseSelectAn.setBounds((int)(10*x),(int)( 83*y),(int)( 310*w), (int)(54*h));
 		panel.add(lblPleaseSelectAn);
 
-		final JLabel lblFileSelected = new JLabel("File selected...");
+		lblFileSelected = new JLabel("File selected...");
 		lblFileSelected.setHorizontalAlignment(SwingConstants.LEFT);
 		lblFileSelected.setForeground(Color.WHITE);
 		lblFileSelected.setFont(new Font("Century Schoolbook", Font.BOLD, 18));
@@ -234,9 +215,9 @@ public class NewGui extends JFrame {
 		btnChooseFile.setFont(new Font("Tahoma", Font.BOLD, 12));
 		btnChooseFile.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				selectedFile = getFile();
-				if (selectedFile != null)
-					lblFileSelected.setText(selectedFile.toString());
+
+                btnChooseFileActionPerformed();
+
 			}
 		});
 		btnChooseFile.setBounds((int)(39*x),(int)( 145*y),(int)( 128*w),(int) (44*h));
@@ -306,21 +287,21 @@ public class NewGui extends JFrame {
 		lblStartEnd_1.setBounds((int)(754*x), 0, (int)(181*w), (int)(27*h));
 		panel_1.add(lblStartEnd_1);
 
-		JComboBox comboBox_1 = new JComboBox();
-		comboBox_1.setBounds((int)(316*x),(int) (27*y),(int)( 125*w), (int)(33*h));
-		panel_1.add(comboBox_1);
+		startDateCombo = new JComboBox();
+        startDateCombo.setBounds((int)(316*x),(int) (27*y),(int)( 125*w), (int)(33*h));
+		panel_1.add(startDateCombo);
 
-		JComboBox comboBox_2 = new JComboBox();
-		comboBox_2.setBounds((int)(452*x), (int)(27*y), (int)(125*w), (int)(33*h));
-		panel_1.add(comboBox_2);
+		endDateCombo = new JComboBox();
+        endDateCombo.setBounds((int)(452*x), (int)(27*y), (int)(125*w), (int)(33*h));
+		panel_1.add(endDateCombo);
 
-		JComboBox comboBox_3 = new JComboBox();
-		comboBox_3.setBounds((int)(712*x), (int)(27*y), (int)(125*w), (int)(33*h));
-		panel_1.add(comboBox_3);
+		startTimeCombo = new JComboBox();
+        startTimeCombo.setBounds((int)(712*x), (int)(27*y), (int)(125*w), (int)(33*h));
+		panel_1.add(startTimeCombo);
 
-		JComboBox comboBox_4 = new JComboBox();
-		comboBox_4.setBounds((int)(847*x), (int)(27*y), (int)(125*w),(int)( 33*h));
-		panel_1.add(comboBox_4);
+		endTimeCombo = new JComboBox();
+		endTimeCombo.setBounds((int)(847*x), (int)(27*y), (int)(125*w),(int)( 33*h));
+		panel_1.add(endTimeCombo);
 
 		JCheckBox checkBoxNBound = new JCheckBox("");
 		checkBoxNBound.setBounds((int)(122*x),(int)( 140*y),(int)( 21*w), (int)(27*h));
@@ -341,21 +322,33 @@ public class NewGui extends JFrame {
 		listNBound.setBounds((int)(69*x), (int)(218*y), (int)(166*w), (int)(128*h));
 		panel_1.add(listNBound);
 
-		JComboBox cBoxNBound = new JComboBox();
+		cBoxNBound = new JComboBox();
 		cBoxNBound.setBounds((int)(69*x), (int)(174*y), (int)(168*w), (int)(33*h));
 		panel_1.add(cBoxNBound);
 
 		JButton btnAddRouteNBound = new JButton("Add Route");
 		btnAddRouteNBound.setFont(new Font("Tahoma", Font.BOLD, 14));
 		btnAddRouteNBound.setBounds((int)(69*x), (int)(357*y), (int)(168*w), (int)(39*h));
+        btnAddRouteNBound.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                btnAddRouteActionPerformed();
+            }
+        });
 		panel_1.add(btnAddRouteNBound);
 
 		JButton btnRemoveRouteNBound = new JButton("Remove Route");
 		btnRemoveRouteNBound.setFont(new Font("Tahoma", Font.BOLD, 14));
 		btnRemoveRouteNBound.setBounds((int)(69*x), (int)(407*y), (int)(168*w), (int)(39*h));
+        btnRemoveRouteNBound.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                btnRemoveRouteActionPerformed();
+            }
+        });
 		panel_1.add(btnRemoveRouteNBound);
 
-		JComboBox cBoxSBound = new JComboBox();
+		cBoxSBound = new JComboBox();
 		cBoxSBound.setBounds((int)(292*x), (int)(174*y), (int)(168*w), (int)(33*h));
 		panel_1.add(cBoxSBound);
 
@@ -366,14 +359,26 @@ public class NewGui extends JFrame {
 		JButton btnAddRouteSBound = new JButton("Add Route");
 		btnAddRouteSBound.setFont(new Font("Tahoma", Font.BOLD, 14));
 		btnAddRouteSBound.setBounds((int)(292*x), (int)(357*y), (int)(168*w), (int)(39*h));
+        btnAddRouteSBound.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                btnAddRouteSBoundActionPerformed();
+            }
+        });
 		panel_1.add(btnAddRouteSBound);
 
 		JButton btnRemoveRouteSBound = new JButton("Remove Route");
 		btnRemoveRouteSBound.setFont(new Font("Tahoma", Font.BOLD, 14));
 		btnRemoveRouteSBound.setBounds((int)(292*x), (int)(407*y), (int)(168*w), (int)(39*h));
+        btnRemoveRouteSBound.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                btnRemoveRouteSBoundActionPerformed();
+            }
+        });
 		panel_1.add(btnRemoveRouteSBound);
 
-		JComboBox cBoxEBound = new JComboBox();
+		cBoxEBound = new JComboBox();
 		cBoxEBound.setBounds((int)(517*x), (int)(174*y), (int)(168*w), (int)(33*h));
 		panel_1.add(cBoxEBound);
 
@@ -384,14 +389,26 @@ public class NewGui extends JFrame {
 		JButton btnAddRouteEBound = new JButton("Add Route");
 		btnAddRouteEBound.setFont(new Font("Tahoma", Font.BOLD, 14));
 		btnAddRouteEBound.setBounds((int)(517*x), (int)(357*y), (int)(168*w), (int)(39*h));
+        btnAddRouteEBound.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                btnAddRouteEBoundActionPerformed();
+            }
+        });
 		panel_1.add(btnAddRouteEBound);
 
 		JButton btnRemoveRouteEBound = new JButton("Remove Route");
 		btnRemoveRouteEBound.setFont(new Font("Tahoma", Font.BOLD, 14));
 		btnRemoveRouteEBound.setBounds((int)(517*x), (int)(407*y), (int)(168*w), (int)(39*h));
+        btnRemoveRouteEBound.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                btnRemoveRouteEBoundActionPerformed();
+            }
+        });
 		panel_1.add(btnRemoveRouteEBound);
 
-		JComboBox cBoxWBound = new JComboBox();
+		cBoxWBound = new JComboBox();
 		cBoxWBound.setBounds((int)(756*x), (int)(174*y), (int)(168*w), (int)(33*h));
 		panel_1.add(cBoxWBound);
 
@@ -402,11 +419,23 @@ public class NewGui extends JFrame {
 		JButton btnAddRouteWBound = new JButton("Add Route");
 		btnAddRouteWBound.setFont(new Font("Tahoma", Font.BOLD, 14));
 		btnAddRouteWBound.setBounds((int)(756*x), (int)(357*y), (int)(168*w), (int)(39*h));
+        btnAddRouteWBound.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                btnAddRouteWBoundActionPerformed();
+            }
+        });
 		panel_1.add(btnAddRouteWBound);
 
 		JButton btnRemoveRouteWBound = new JButton("Remove Route");
 		btnRemoveRouteWBound.setFont(new Font("Tahoma", Font.BOLD, 14));
 		btnRemoveRouteWBound.setBounds((int)(756*x), (int)(407*y), (int)(168*w), (int)(39*h));
+        btnRemoveRouteWBound.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                btnRemoveRouteWBoundActionPerformed();
+            }
+        });
 		panel_1.add(btnRemoveRouteWBound);
 
 		JCheckBox checkBoxWBound = new JCheckBox("");
@@ -417,13 +446,7 @@ public class NewGui extends JFrame {
 		JButton btnSubmitDataSettings = new JButton("Submit");
 		btnSubmitDataSettings.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				tabbedPane.setEnabledAt(2, true);
-				tabbedPane.setEnabledAt(3, true);
-				tabbedPane.setTitleAt(2,
-						"<html><H1 color=\"#163259\">Graphs</H3></html>");
-				tabbedPane.setTitleAt(3,
-						"<html><H1 color=\"#163259\">Export</H3></html>");
-				tabbedPane.setSelectedIndex(2);
+				btnSubmitButtonDataSettingsActionPerformed();
 			}
 		});
 		btnSubmitDataSettings.setFont(new Font("Tahoma", Font.BOLD, 14));
@@ -493,7 +516,7 @@ public class NewGui extends JFrame {
 		// http://stackoverflow.com/questions/18571203/how-to-browse-the-files-only-with-extensions-xls-using-jfilechooser-in-swing
 		JFileChooser fileChooser = new JFileChooser();
 		FileNameExtensionFilter filter = new FileNameExtensionFilter(
-				"XLSX files", "xlsx");
+				"XLS files", "xls");
 		fileChooser.setFileFilter(filter);
 		// fileChooser.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
 		int result = fileChooser.showOpenDialog(this);
@@ -501,4 +524,199 @@ public class NewGui extends JFrame {
 		File fileName = fileChooser.getSelectedFile();// get file
 		return fileName;
 	}// end getFile
-}
+
+
+
+    /*************************************************
+     *       all actionlisteners for open file tab
+     *************************************************/
+
+
+
+    public void btnSubmitActionPerformed(){
+
+        if (selectedFile != null) {
+
+            //set input file for reading
+            excel.setInputFile(lblFileSelected.getText());
+            try{
+                excel.Read();
+            }catch(IOException e){
+                e.printStackTrace();
+            }
+
+            Set a = excel.data.keySet();
+            Object[] dateKeys = a.toArray();
+
+            Set b = excel.data.get(dateKeys[0]).keySet();
+            Object[] routeKeys = b.toArray();
+
+            //for each date
+            for(int i = 0; i < dateKeys.length;i++){
+
+                //fill combo boxes from available dates
+                startDateCombo.addItem(dateKeys[i]);
+                endDateCombo.addItem((dateKeys[i]));
+
+
+            } //end for each date
+
+            //for each route
+            for(int i = 0; i < routeKeys.length;i++){
+
+                //fill comboboxes with all routes
+                cBoxNBound.addItem(routeKeys[i]);
+                cBoxSBound.addItem(routeKeys[i]);
+                cBoxEBound.addItem(routeKeys[i]);
+                cBoxWBound.addItem(routeKeys[i]);
+
+            } //end for each route
+
+            //populate timeInterval
+            for(int i = 1; i <= 23;i++){
+
+                startTimeCombo.addItem(i + ":00");
+                endTimeCombo.addItem(i + ":00");
+
+            }
+
+
+            // if a file is selected then do the next thing
+            tabbedPane.setEnabledAt(1, true);
+            tabbedPane
+                    .setTitleAt(1,
+                            "<html><H1 color=\"#163259\">Data Settings</H3></html>");
+            tabbedPane.setSelectedIndex(1);
+        }
+    }
+
+    public void btnContactUsActionPerformed(){
+        // To contact us a new JFrame will appear and display an email
+        // to which the user can send messages
+        JFrame alert = new JFrame();
+        alert.setTitle("How to Contact us");
+        alert.setResizable(false);
+        alert.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        alert.setBounds((int)(100 * x),(int)( 100 * y),(int) (450 * w),(int)( 300 * h));
+        contentPane = new JPanel();
+        contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+        contentPane.setBackground(Color.decode("#014D33"));
+        alert.setContentPane(contentPane);
+        contentPane.setLayout(null);
+
+        JPanel panel = new JPanel();
+        panel.setBounds((int)(21 * x),(int)( 23 * y), (int)(402 * w),(int)( 224 * h));
+        panel.setBackground(Color.decode("#163259"));
+        contentPane.add(panel);
+        panel.setLayout(null);
+
+        JLabel lblNewLabel = new JLabel(
+                "Please Email jamesmpalmisano@gmail.com");
+        lblNewLabel.setForeground(new Color(255, 255, 255));
+        lblNewLabel.setFont(new Font("Times New Roman", Font.BOLD, 15));
+        lblNewLabel.setBounds((int)(59 * x),(int)( 59 * y), (int)(302 * w),(int)( 89 * h));
+        panel.add(lblNewLabel);
+
+        alert.setVisible(true);
+        alert.setDefaultCloseOperation(HIDE_ON_CLOSE);
+
+
+    }   //end contact us
+
+    public void btnDoOurSurveyActionPerformed(){
+        // open default webbrowsser
+        // this code was found here
+        // http://stackoverflow.com/questions/10967451/open-a-link-in-browser-with-java-button
+        Desktop desktop = Desktop.isDesktopSupported() ? Desktop
+                .getDesktop() : null;
+        if (desktop != null
+                && desktop.isSupported(Desktop.Action.BROWSE)) {
+            try {
+                desktop.browse(new URI("http://goo.gl/forms/m8OqtUwd8l"));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }//end do our survey
+
+    public void btnChooseFileActionPerformed(){
+
+        selectedFile = getFile();
+        if (selectedFile != null)
+            lblFileSelected.setText(selectedFile.toString());
+
+    }
+
+
+/***********************************************************************************
+ *                    all actionListeners for data settings tab
+ ***********************************************************************************/
+
+
+
+    public void btnSubmitButtonDataSettingsActionPerformed(){
+
+        //enable tabs
+        tabbedPane.setEnabledAt(2, true);
+        tabbedPane.setEnabledAt(3, true);
+        tabbedPane.setTitleAt(2,
+                "<html><H1 color=\"#163259\">Graphs</H3></html>");
+        tabbedPane.setTitleAt(3,
+                "<html><H1 color=\"#163259\">Export</H3></html>");
+        tabbedPane.setSelectedIndex(2);
+
+
+    }// end submit button
+
+    public void btnAddRouteActionPerformed(){
+
+
+
+    }//end add button
+
+    public void btnRemoveRouteActionPerformed(){
+
+
+
+    }//end remove button
+
+    public void btnAddRouteSBoundActionPerformed(){
+
+
+
+    }//end add button
+
+    public void btnRemoveRouteSBoundActionPerformed(){
+
+
+
+    }//end remove button
+
+    public void btnAddRouteEBoundActionPerformed(){
+
+
+
+    }//end add button
+
+    public void btnRemoveRouteEBoundActionPerformed(){
+
+
+
+    } // end remove button
+
+    public void btnAddRouteWBoundActionPerformed(){
+
+
+
+
+
+    }  //end add button
+
+    public void btnRemoveRouteWBoundActionPerformed(){
+
+
+
+    } //end remove button
+
+
+} //end newGUI
