@@ -131,7 +131,7 @@ public class Gui extends JFrame {
 
 		Graphs graphs = null;
 		try {
-			graphs = new Graphs("The graphs");
+			graphs = new Graphs();
 			panel3.add(graphs);
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block

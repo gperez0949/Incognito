@@ -26,7 +26,7 @@ public class TestGraphs{
         window.setSize(700, 500);
         window.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
-        Graphs g = new Graphs("Title");
+        Graphs g = new Graphs();
 
 
 

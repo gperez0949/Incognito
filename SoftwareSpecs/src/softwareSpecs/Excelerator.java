@@ -58,7 +58,7 @@ public class Excelerator {
      */
     public void Read() throws IOException{
 
-        double startTime = System.nanoTime();
+        double startRTime = System.nanoTime();
 
         //initialize maps
 
@@ -136,8 +136,8 @@ public class Excelerator {
             w.close();
 
             //display statues
-            double endTime = System.nanoTime();
-            System.out.println("Excel read successful: " + (endTime -startTime) / 1000000000 + "s");
+            double endRTime = System.nanoTime();
+            System.out.println("Excel read successful: " + (endRTime -startRTime) / 1000000000 + "s");
 
 
 
@@ -160,6 +160,8 @@ public class Excelerator {
      * @throws IOException
      */
     public void Analyze(String dataSettings) throws IOException{
+
+        double startATime = System.nanoTime();
 
         //analyze will build these HashMaps
         avgTravelTimes = new LinkedHashMap<String, LinkedHashMap<String, ArrayList<Double>>>();
@@ -344,6 +346,9 @@ public class Excelerator {
 
         writer.close();
 
+        double endATime = System.nanoTime();
+        System.out.println("Data Analysis Successful: " + (endATime - startATime)/1000000000 + "s");
+
     }
 
 
@@ -357,7 +362,7 @@ public class Excelerator {
      */
     public void Write(String filename) throws IOException, WriteException {
 
-        //todo finish this method
+        double startWTime = System.nanoTime();
 
         //create writable workbook
         File excelFile = new File(filename + ".xls");
@@ -873,6 +878,9 @@ public class Excelerator {
         //write file and then close
         workbook.write();
         workbook.close();
+
+        double endWTime = System.nanoTime();
+        System.out.println("Excel write successful: " + (endWTime - startWTime)/1000000000 + "s");
 
     } //end write
 
