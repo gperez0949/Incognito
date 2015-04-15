@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="DynamicStat" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="70b8b1ff-a55f-4710-ab04-0db9dcc6a30f" name="Default" comment="" />
     <ignored path="SoftwareSpecs.iws" />
@@ -9,13 +14,14 @@
     <file path="/Gui.java" changelist="70b8b1ff-a55f-4710-ab04-0db9dcc6a30f" time="1426096736321" ignored="false" />
     <file path="/GetProjectOrCreateNew.java" changelist="70b8b1ff-a55f-4710-ab04-0db9dcc6a30f" time="1426088086012" ignored="false" />
     <file path="/fragment.java" changelist="70b8b1ff-a55f-4710-ab04-0db9dcc6a30f" time="1426087821384" ignored="false" />
-    <file path="/Excelerator.java" changelist="70b8b1ff-a55f-4710-ab04-0db9dcc6a30f" time="1428622873817" ignored="false" />
+    <file path="/Excelerator.java" changelist="70b8b1ff-a55f-4710-ab04-0db9dcc6a30f" time="1428960370641" ignored="false" />
     <file path="/TestExcelerator.java" changelist="70b8b1ff-a55f-4710-ab04-0db9dcc6a30f" time="1426093867309" ignored="false" />
     <file path="/TestAnalyze.java" changelist="70b8b1ff-a55f-4710-ab04-0db9dcc6a30f" time="1427831768631" ignored="false" />
     <file path="/TestWriter.java" changelist="70b8b1ff-a55f-4710-ab04-0db9dcc6a30f" time="1428344723268" ignored="false" />
-    <file path="/Graphs.java" changelist="70b8b1ff-a55f-4710-ab04-0db9dcc6a30f" time="1428350081450" ignored="false" />
+    <file path="/Graphs.java" changelist="70b8b1ff-a55f-4710-ab04-0db9dcc6a30f" time="1428965364220" ignored="false" />
     <file path="/settings.dat" changelist="70b8b1ff-a55f-4710-ab04-0db9dcc6a30f" time="1428358401566" ignored="false" />
-    <file path="/NewGui.java" changelist="70b8b1ff-a55f-4710-ab04-0db9dcc6a30f" time="1428624553222" ignored="false" />
+    <file path="/NewGui.java" changelist="70b8b1ff-a55f-4710-ab04-0db9dcc6a30f" time="1429041740168" ignored="false" />
+    <file path="/Event.java" changelist="70b8b1ff-a55f-4710-ab04-0db9dcc6a30f" time="1428890487705" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +38,81 @@
   <component name="DebuggerManager">
     <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint url="file://$PROJECT_DIR$/src/softwareSpecs/DataSettings.java" line="2" class="DataSettings.java" package="">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/softwareSpecs/NewGui.java" line="969" class="src.softwareSpecs.NewGui" package="src.softwareSpecs">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/softwareSpecs/NewGui.java" line="970" class="src.softwareSpecs.NewGui" package="src.softwareSpecs">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/softwareSpecs/NewGui.java" line="971" class="src.softwareSpecs.NewGui" package="src.softwareSpecs">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/softwareSpecs/NewGui.java" line="972" class="src.softwareSpecs.NewGui" package="src.softwareSpecs">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/softwareSpecs/NewGui.java" line="976" class="src.softwareSpecs.NewGui" package="src.softwareSpecs">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -96,7 +177,16 @@
       <file leaf-file-name="Gui.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/softwareSpecs/Gui.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="143" column="10" selection-start="4267" selection-end="4267" vertical-scroll-proportion="0.0">
+            <state line="133" column="33" selection-start="4095" selection-end="4095" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TestGraphs.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/softwareSpecs/TestGraphs.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="28" column="30" selection-start="546" selection-end="546" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -105,7 +195,7 @@
       <file leaf-file-name="Excelerator.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/softwareSpecs/Excelerator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="144" column="52" selection-start="3963" selection-end="3963" vertical-scroll-proportion="0.0">
+            <state line="191" column="0" selection-start="5645" selection-end="5645" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -114,10 +204,17 @@
       <file leaf-file-name="NewGui.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/softwareSpecs/NewGui.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="647" column="54" selection-start="24119" selection-end="24119" vertical-scroll-proportion="0.25585285">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state line="6" column="10" selection-start="120" selection-end="120" vertical-scroll-proportion="0.116972476">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Event.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/softwareSpecs/Event.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="19" column="45" selection-start="400" selection-end="400" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -125,7 +222,7 @@
       <file leaf-file-name="Graphs.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/softwareSpecs/Graphs.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="29" selection-start="1291" selection-end="1291" vertical-scroll-proportion="0.0">
+            <state line="143" column="36" selection-start="4828" selection-end="4828" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -134,7 +231,7 @@
       <file leaf-file-name="TestWriter.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/softwareSpecs/TestWriter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="52" column="0" selection-start="1509" selection-end="1509" vertical-scroll-proportion="0.0">
+            <state line="47" column="37" selection-start="1341" selection-end="1341" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -143,34 +240,7 @@
       <file leaf-file-name="settings.dat" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/settings.dat">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="1" selection-start="211" selection-end="211" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TestAnalyze.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/softwareSpecs/TestAnalyze.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="4" selection-start="205" selection-end="1014" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TestExcelerator.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/softwareSpecs/TestExcelerator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="49" selection-start="432" selection-end="432" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="processed.dat" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/processed.dat">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="7" column="16" selection-start="51" selection-end="51" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -179,7 +249,7 @@
       <file leaf-file-name="NewEventFrame.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/softwareSpecs/NewEventFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="102" column="11" selection-start="3523" selection-end="3523" vertical-scroll-proportion="0.0">
+            <state line="127" column="8" selection-start="4093" selection-end="4215" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -195,7 +265,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="C:/Program Files/Java/jdk1.7.0_40/src.zip!/java/security/ProtectionDomain.java" />
         <option value="$PROJECT_DIR$/src/softwareSpecs/GetProjectOrCreateNew.java" />
         <option value="$PROJECT_DIR$/src/softwareSpecs/DataSettings.java" />
         <option value="C:/Program Files/Java/jdk1.7.0_40/src.zip!/java/awt/EventQueue.java" />
@@ -205,8 +274,10 @@
         <option value="$PROJECT_DIR$/processed.dat" />
         <option value="$PROJECT_DIR$/src/softwareSpecs/TestExcelerator.java" />
         <option value="$PROJECT_DIR$/src/softwareSpecs/TestWriter.java" />
-        <option value="$PROJECT_DIR$/src/softwareSpecs/Gui.java" />
         <option value="$PROJECT_DIR$/settings.dat" />
+        <option value="$PROJECT_DIR$/src/softwareSpecs/Event.java" />
+        <option value="$PROJECT_DIR$/src/softwareSpecs/TestGraphs.java" />
+        <option value="$PROJECT_DIR$/src/softwareSpecs/Gui.java" />
         <option value="$PROJECT_DIR$/src/softwareSpecs/Excelerator.java" />
         <option value="$PROJECT_DIR$/src/softwareSpecs/Graphs.java" />
         <option value="$PROJECT_DIR$/src/softwareSpecs/NewGui.java" />
@@ -245,6 +316,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -278,20 +350,37 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SoftwareSpecs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SoftwareSpecs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="META-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="GoToFile.includeJavaFiles" value="false" />
-    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="recentsLimit" value="5" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/softwareSpecs" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="FullScreen" value="false" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RunManager" selected="Application.NewGui">
@@ -385,6 +474,19 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -410,19 +512,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -471,7 +560,13 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="SoftwareSpecs" />
       <envs />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
@@ -528,21 +623,21 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3997773" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3051225" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850778" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25026682" sideWeight="0.6948775" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25026682" sideWeight="0.6948775" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3051225" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -617,53 +712,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/softwareSpecs/Export.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="13" selection-start="360" selection-end="360" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/softwareSpecs/GetProjectOrCreateNew.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="50" selection-start="942" selection-end="942" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/softwareSpecs/DataSettings.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="65" selection-start="1848" selection-end="1848" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/softwareSpecs/DataReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="98" selection-start="688" selection-end="688" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/softwareSpecs/NewEventFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="102" column="11" selection-start="3523" selection-end="3523" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.7.0_40/src.zip!/java/awt/EventQueue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="102" column="0" selection-start="2896" selection-end="2896" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.7.0_40/src.zip!/java/util/LinkedHashMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="146" column="13" selection-start="6537" selection-end="6569" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/softwareSpecs/TestAnalyze.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="4" selection-start="205" selection-end="1014" vertical-scroll-proportion="0.0">
@@ -673,23 +721,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/processed.dat">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/softwareSpecs/Gui.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="143" column="10" selection-start="4267" selection-end="4267" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/settings.dat">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="1" selection-start="211" selection-end="211" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/softwareSpecs/TestExcelerator.java">
@@ -699,33 +731,88 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/softwareSpecs/TestWriter.java">
+    <entry file="file://$PROJECT_DIR$/src/softwareSpecs/DataSettings.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="0" selection-start="1509" selection-end="1509" vertical-scroll-proportion="0.0">
+        <state line="183" column="42" selection-start="5230" selection-end="5230" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/softwareSpecs/Excelerator.java">
+    <entry file="file://$PROJECT_DIR$/src/softwareSpecs/NewEventFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="144" column="52" selection-start="3963" selection-end="3963" vertical-scroll-proportion="0.0">
+        <state line="127" column="8" selection-start="4093" selection-end="4215" vertical-scroll-proportion="0.0">
           <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/settings.dat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="16" selection-start="51" selection-end="51" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/softwareSpecs/Event.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="45" selection-start="400" selection-end="400" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/softwareSpecs/TestGraphs.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="30" selection-start="546" selection-end="546" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/softwareSpecs/Gui.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="133" column="33" selection-start="4095" selection-end="4095" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/softwareSpecs/TestWriter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="47" column="37" selection-start="1341" selection-end="1341" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graph.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/softwareSpecs/Graphs.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="29" selection-start="1291" selection-end="1291" vertical-scroll-proportion="0.0">
+        <state line="143" column="36" selection-start="4828" selection-end="4828" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/graphs.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/softwareSpecs/Excelerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="191" column="0" selection-start="5645" selection-end="5645" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/META-INF/MANIFEST.MF">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/softwareSpecs/NewGui.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="647" column="54" selection-start="24119" selection-end="24119" vertical-scroll-proportion="0.25585285">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="6" column="10" selection-start="120" selection-end="120" vertical-scroll-proportion="0.116972476">
+          <folding />
         </state>
       </provider>
     </entry>
@@ -735,10 +822,12 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
+          <last-edited>SoftwareSpecs:jar</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>

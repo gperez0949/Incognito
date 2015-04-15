@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="SoftwareSpecs:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/SoftwareSpecs_jar</output-path>
+    <root id="archive" name="SoftwareSpecs.jar">
+      <element id="module-output" name="SoftwareSpecs" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/JGraphJars/jfreechart-1.0.19.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/ReadExcelJars/jxl.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/JGraphJars/jcommon-1.0.23.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

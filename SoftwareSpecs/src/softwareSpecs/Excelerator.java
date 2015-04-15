@@ -167,8 +167,8 @@ public class Excelerator {
         avgTravelTimes = new LinkedHashMap<String, LinkedHashMap<String, ArrayList<Double>>>();
         avgSpeed = new LinkedHashMap<String, LinkedHashMap<String, ArrayList<Double>>>();
 
-        File file = new File("processed.dat");
-        PrintWriter writer = new PrintWriter(file);
+        //File file = new File("processed.dat");
+        //PrintWriter writer = new PrintWriter(file);
 
         //Anayize parameters taken from data settings
         Scanner scan = new Scanner(new File(dataSettings));
@@ -261,7 +261,7 @@ public class Excelerator {
                             ||(eastRoutes.contains(routesKey[i])&&east.equals("true"))||(westRoutes.contains(routesKey[i])&& west.equals("true"))){
 
                         //System.out.println("route: " + routesKey[i]);
-                        writer.println("route: " + routesKey[i]);
+                        //writer.println("route: " + routesKey[i]);
 
 
                         //for all cells in the time interval
@@ -316,7 +316,7 @@ public class Excelerator {
 
                             //write to process.dat to store data for future referance
                             String average = String.format("%.3f",takeAvg(nonEventTravelTimes));
-                            writer.println(average);
+                            //writer.println(average);
 
                         }//end for cells
 
@@ -344,7 +344,7 @@ public class Excelerator {
 
         }//end for each event
 
-        writer.close();
+        //writer.close();
 
         double endATime = System.nanoTime();
         System.out.println("Data Analysis Successful: " + (endATime - startATime)/1000000000 + "s");
